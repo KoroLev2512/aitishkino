@@ -53,10 +53,10 @@ export const PlatformSection = () => {
               <div className={styles.animationContainer}>
                 <Lottie
                   animationData={platformAnimation}
-                  loop
-                  autoplay
+                  loop={true}
+                  autoplay={true}
                   className={styles.animation}
-                  style={{ width: 600, height: 600, marginTop: 8 }}
+                  style={{ width: '100%', height: '100%' }}
                 />
               </div>
             </div>

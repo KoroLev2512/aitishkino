@@ -17,10 +17,10 @@ export const HeroSection = () => {
           <div className={styles.animationContainer}>
             <Lottie
               animationData={heroAnimation}
-              loop
-              autoplay
+              loop={true}
+              autoplay={true}
               className={styles.animation}
-              style={{ width: 800, height: 600 }}
+              style={{ width: '100%', height: '100%' }}
             />
           </div>
           
@@ -31,7 +31,7 @@ export const HeroSection = () => {
               <span className={styles.highlight}>с гаджетами за час!</span>
             </h1>
             <p className={styles.description}>
-              В "Айтишкино" мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
+              В &ldquo;Айтишкино&rdquo; мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
             </p>
             <a 
               href="#" 

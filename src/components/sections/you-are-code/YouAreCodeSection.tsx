@@ -12,10 +12,10 @@ export const YouAreCodeSection = () => {
           <div className={styles.animationContainer}>
             <Lottie
               animationData={secondblockAnimation}
-              loop
-              autoplay
+              loop={true}
+              autoplay={true}
               className={styles.animation}
-              style={{ width: 800, height: 600 }}
+              style={{ width: '100%', height: '100%' }}
             />
           </div>
           
@@ -27,7 +27,7 @@ export const YouAreCodeSection = () => {
               <span className={styles.highlight}>Пора запустить программу.</span>
             </h2>
             <p className={styles.description}>
-              В "Айтишкино" мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
+              В &ldquo;Айтишкино&rdquo; мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
             </p>
           </div>
         </div>

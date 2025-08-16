@@ -34,6 +34,9 @@
   max-width: 800px;
   margin: 0 auto 2rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .animation {
@@ -41,6 +44,29 @@
   height: auto;
   display: block;
   border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  .animationContainer {
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+  
+  .animation {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animationContainer {
+    margin: 0 auto 1rem;
+  }
+  
+  .animation {
+    max-width: 280px;
+  }
 }
 
 .textContent {

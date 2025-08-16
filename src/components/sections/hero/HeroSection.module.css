@@ -29,9 +29,8 @@
   top: 0;
   right: 0;
   width: 50%;
-  background-color: #ffffff;
   height: 100%;
-  background: #ffffff;
+  background: #fff;
 }
 
 .container {
@@ -60,12 +59,38 @@
   max-width: 600px;
   margin: 0 auto 1.5rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .animation {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 100%;
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  .animationContainer {
+    margin: 0 auto 1rem;
+    max-width: 100%;
+  }
+  
+  .animation {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animationContainer {
+    margin: 0 auto 0.75rem;
+  }
+  
+  .animation {
+    max-width: 280px;
+  }
 }
 
 .textContent {

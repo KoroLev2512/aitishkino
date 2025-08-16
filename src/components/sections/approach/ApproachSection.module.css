@@ -275,6 +275,7 @@
   justify-content: center;
   align-items: center;
   order: 1;
+  overflow: hidden;
 }
 
 @media (min-width: 375px) {
@@ -543,6 +544,19 @@
   max-width: 100%;
   border-radius: 8px;
   display: block;
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  .animation {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animation {
+    max-width: 240px;
+  }
 }
 
 /* Fix animation overlap on mobile devices */

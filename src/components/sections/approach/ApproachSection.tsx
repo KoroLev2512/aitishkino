@@ -17,10 +17,10 @@ export const ApproachSection = () => {
           <div className={styles.animationContainer}>
             <Lottie
               animationData={approachAnimation}
-              loop
-              autoplay
+              loop={true}
+              autoplay={true}
               className={styles.animation}
-              style={{ width: 600, height: 600 }}
+              style={{ width: '100%', height: '100%' }}
             />
           </div>
           

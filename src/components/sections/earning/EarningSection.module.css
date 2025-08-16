@@ -29,12 +29,38 @@
   max-width: 800px;
   margin: 0 auto 80px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .animation {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 100%;
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  .animationContainer {
+    margin: 0 auto 50px;
+    max-width: 100%;
+  }
+  
+  .animation {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animationContainer {
+    margin: 0 auto 40px;
+  }
+  
+  .animation {
+    max-width: 280px;
+  }
 }
 
 .cardsContainer {

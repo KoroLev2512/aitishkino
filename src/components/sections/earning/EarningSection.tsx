@@ -13,10 +13,10 @@ export const EarningSection = () => {
         <div className={styles.animationContainer}>
           <Lottie
             animationData={earningAnimation}
-            loop
-            autoplay
+            loop={true}
+            autoplay={true}
             className={styles.animation}
-            style={{ width: 800, height: 600 }}
+            style={{ width: '100%', height: '100%' }}
           />
         </div>
         
