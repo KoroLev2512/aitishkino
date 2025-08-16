@@ -1,0 +1,196 @@
+.section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.title {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  color: #1e1e1e;
+  margin: 0 0 16px;
+  padding: 0 16px;
+}
+
+.subtitle {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  padding: 0 16px;
+}
+
+.gridContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0 40px;
+}
+
+.grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 16px;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Show scroll indicators */
+.scrollIndicator {
+  display: none;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Card styles */
+.grid > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Адаптивность */
+@media (min-width: 640px) {
+  .section {
+    padding: 80px 0;
+  }
+  
+  .title {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 24px;
+    overflow: visible;
+  }
+  
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 0 32px;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 1600px) {
+  .grid {
+    max-width: 1600px;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 767px) {
+  .section {
+    padding: 48px 0 32px;
+  }
+  
+  .grid {
+    padding: 0 16px 24px;
+    gap: 16px;
+    scroll-padding: 0 16px;
+  }
+  
+  .scrollIndicator {
+    display: block;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 0 16px;
+    gap: 20px;
+  }
+}

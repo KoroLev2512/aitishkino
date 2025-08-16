@@ -1,0 +1,37 @@
+import React from 'react';
+import styles from './YouAreCodeSection.module.css';
+import Lottie from 'lottie-react';
+import secondblockAnimation from '@/assets/animations/secondblock.json';
+
+export const YouAreCodeSection = () => {
+  return (
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Animation - Moved to top on mobile */}
+          <div className={styles.animationContainer}>
+            <Lottie
+              animationData={secondblockAnimation}
+              loop
+              autoplay
+              className={styles.animation}
+              style={{ width: 800, height: 600 }}
+            />
+          </div>
+          
+          {/* Text content */}
+          <div className={styles.textContent}>
+            <h2 className={styles.title}>
+              Ты — код,
+              <span className={styles.highlight}>который изменит мир.</span>
+              <span className={styles.highlight}>Пора запустить программу.</span>
+            </h2>
+            <p className={styles.description}>
+              В "Айтишкино" мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

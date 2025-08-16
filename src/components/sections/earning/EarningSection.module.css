@@ -1,0 +1,85 @@
+.section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #1E1E1E;
+  text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.animationContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  overflow: hidden;
+}
+
+.animation {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .animationPlaceholder {
+    margin-bottom: 60px;
+    height: 350px;
+  }
+  
+  .title {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .animationPlaceholder {
+    height: 250px;
+    margin-bottom: 40px;
+  }
+  
+  .cardsContainer {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,143 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Animation container */
+.animationContainer {
+  order: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+}
+
+.animation {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.textContent {
+  order: 2;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .animationContainer {
+    order: 2;
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .textContent {
+    order: 1;
+    padding-right: 3rem;
+    max-width: 50%;
+  }
+}
+
+/* Text content styles moved up */
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+.highlight {
+  color: #00B18F;
+  display: block;
+  margin-top: 8px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 20px;
+  }
+}
+
+/* Animation container styles moved up */
+
+.animationPlaceholder {
+  position: absolute;
+  inset: 0;
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.animationText {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.animationIcon {
+  width: 4rem;
+  height: 4rem;
+  border: 0.25rem dashed #d1d5db;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.animationSubtext {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}

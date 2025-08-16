@@ -1,0 +1,154 @@
+.faqItem {
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.faqItem.isOpen {
+  background-color: #f0f9ff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.questionButton:hover {
+  color: #111827;
+}
+
+.questionText {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  margin-right: 24px;
+  line-height: 1.5;
+}
+
+.icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.iconLine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4b5563;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.horizontal {
+  width: 16px;
+  height: 2px;
+}
+
+.vertical {
+  width: 2px;
+  height: 16px;
+}
+
+.faqItem.isOpen .horizontal {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.faqItem.isOpen .vertical {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.answer {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.answerContent {
+  padding: 0 24px 24px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.answerParagraph {
+  margin-bottom: 16px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.answerParagraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .questionButton {
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+  
+  .questionText {
+    font-size: 16px;
+  }
+  
+  .answerContent {
+    padding: 0 20px 20px;
+    font-size: 15px;
+  }
+  
+  .answerParagraph {
+    font-size: 15px;
+  }
+  
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .questionButton {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  
+  .questionText {
+    font-size: 15px;
+  }
+  
+  .answerContent {
+    padding: 0 18px 18px;
+    font-size: 14px;
+  }
+  
+  .answerParagraph {
+    font-size: 14px;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}

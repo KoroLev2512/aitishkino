@@ -1,0 +1,561 @@
+/* Base styles */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+/* 375px - 479px */
+@media (min-width: 375px) {
+  .title {
+    font-size: 30px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+}
+
+/* 480px - 639px */
+@media (min-width: 480px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .description {
+    font-size: 17px;
+  }
+}
+
+/* 640px - 767px */
+@media (min-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
+  
+  .description {
+    font-size: 18px;
+  }
+}
+
+/* 768px - 1023px */
+@media (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .animationContainer {
+    flex: 1;
+    order: 2;
+  }
+  
+  .textContent {
+    flex: 1;
+    order: 1;
+    text-align: left;
+  }
+  
+  .title {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+}
+
+/* 1024px - 1279px */
+@media (min-width: 1024px) {
+  .section {
+    min-height: 100vh;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .content {
+    max-width: 1200px;
+    gap: 60px;
+  }
+  
+  .title {
+    font-size: 48px;
+  }
+  
+  .description {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+/* 1280px - 1439px */
+@media (min-width: 1280px) {
+  .title {
+    font-size: 52px;
+  }
+  
+  .description {
+    font-size: 21px;
+  }
+}
+
+/* 1440px+ */
+@media (min-width: 1440px) {
+  .section {
+    padding: 100px 0;
+  }
+  
+  .content {
+    max-width: 1280px;
+  }
+  
+  .title {
+    font-size: 56px;
+  }
+  
+  .description {
+    font-size: 22px;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+}
+
+.backgroundLeft {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.backgroundRight {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  min-width: 0; /* Prevent flex container overflow */
+  margin: 0 auto;
+  padding: 0 16px;
+  z-index: 2;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container padding adjustments */
+@media (min-width: 375px) {
+  .container {
+    padding: 0 18px;
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  gap: 24px;
+  width: 100%;
+  min-width: 0; /* Prevent flex container overflow */
+}
+
+/* Content gap adjustments */
+@media (min-width: 425px) {
+  .content {
+    gap: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    gap: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  .content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
+
+/* Animation Container - Left Side */
+.animationContainer {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+@media (min-width: 375px) {
+  .animationContainer {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .animationContainer {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .animationContainer {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animationContainer {
+    order: 0;
+    flex: 1;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .animationContainer {
+    padding: 2rem;
+  }
+}
+
+.animationPlaceholder {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Animation placeholder adjustments */
+@media (min-width: 375px) {
+  .animationPlaceholder {
+    min-height: 280px;
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .animationPlaceholder {
+    min-height: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .animationPlaceholder {
+    min-height: 350px;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (min-width: 1024px) {
+  .animationPlaceholder {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .animationPlaceholder {
+    min-height: 450px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (min-width: 768px) {
+  .animationContainer {
+    padding: 2rem;
+  }
+  
+  .animationPlaceholder {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animationContainer {
+    order: 0;
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .animationPlaceholder {
+    min-height: 400px;
+  }
+}
+
+.animationIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.animationText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.animationSubtext {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Text Content - Right Side */
+.textContent {
+  width: 100%;
+  padding: 0.5rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 320px) {
+  .textContent {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 375px) {
+  .textContent {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .textContent {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .textContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .textContent {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 500px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1440px) {
+  .textContent {
+    padding: 2rem;
+    max-width: 600px;
+  }
+}
+
+/* Title and Description */
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+  transition: font-size 0.3s ease;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: #1a1a1a;
+}
+
+.highlight {
+  color: #00B18F;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(0, 177, 143, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0 0 2rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .animationContainer {
+    margin-bottom: 3rem;
+  }
+  
+  .textContent {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .animationPlaceholder {
+    min-height: 300px;
+  }
+}
+
+/* Animation/GIF Image Styles */
+.animation {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Fix animation overlap on mobile devices */
+@media (max-width: 767px) {
+  .animationContainer {
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .animationContainer {
+    margin-top: 15px; 
+    margin-bottom: 20px; 
+  }
+}

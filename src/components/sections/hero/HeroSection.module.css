@@ -1,0 +1,248 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+}
+
+.backgroundLeft {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background-color: #ffffff;
+}
+
+.backgroundRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  background-color: #ffffff;
+  height: 100%;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Animation container */
+.animationContainer {
+  order: 1;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+}
+
+.animation {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.textContent {
+  order: 2;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .animationContainer {
+    order: 2;
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .textContent {
+    order: 1;
+    padding-right: 3rem;
+    max-width: 50%;
+  }
+}
+
+/* Text content styles moved up */
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+@media (min-width: 480px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+}
+
+.highlight {
+  color: #00B18F;
+  display: block;
+  margin-top: 8px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .description {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}
+
+.button {
+  background-color: #00B18F;
+  color: white;
+  font-weight: 500;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+@media (min-width: 480px) {
+  .button {
+    font-size: 17px;
+    padding: 16px 28px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 18px;
+    padding: 16px 32px;
+    height: 72px;
+  }
+}
+
+.button:hover {
+  background-color: #00997a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 177, 143, 0.3);
+}
+
+.animationPlaceholder {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.animationText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.animationIcon {
+  width: 64px;
+  height: 64px;
+  border: 4px dashed #d1d5db;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.animationSubtext {
+  color: #9ca3af;
+  font-size: 14px;
+}
