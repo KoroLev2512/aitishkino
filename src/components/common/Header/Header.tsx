@@ -25,6 +25,44 @@ const Header = () => {
     }
   };
 
+  const handleRecordClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const form = document.getElementById('application-form');
+    if (form) {
+      const yOffset = -80;
+      const y = form.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+      
+      const firstInput = form.querySelector('input, textarea, select') as HTMLInputElement | null;
+      if (firstInput) {
+        const focusInput = () => {
+          firstInput.focus({
+            preventScroll: true
+          });
+        };
+        
+        const focusTimer = setTimeout(focusInput, 800);
+        
+        const onScroll = () => {
+          if ((window.pageYOffset >= y - 10 && window.pageYOffset <= y + 10) || 
+              (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2) {
+            window.removeEventListener('scroll', onScroll);
+            clearTimeout(focusTimer);
+            focusInput();
+          }
+        };
+        
+        setTimeout(() => {
+          window.addEventListener('scroll', onScroll, { once: true });
+        }, 100);
+      }
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -77,9 +115,9 @@ const Header = () => {
           <div className={styles.buttonsContainer}>
             <button 
               className={styles.recordButton}
-              onClick={() => {
+              onClick={(e) => {
                 closeMenu();
-                document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' });
+                handleRecordClick(e);
               }}
             >
               Запись
@@ -132,9 +170,9 @@ const Header = () => {
             <div className={styles.mobileButtons}>
               <button 
                 className={styles.mobileRecordButton}
-                onClick={() => {
+                onClick={(e) => {
                   closeMenu();
-                  document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' });
+                  handleRecordClick(e);
                 }}
               >
                 Запись

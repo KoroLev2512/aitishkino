@@ -3,39 +3,28 @@
 import { useState } from 'react';
 import styles from './ConsultationSection.module.css';
 import { Send } from 'lucide-react';
+import { InputMask } from '@react-input/mask';
+import { useForm, Controller } from 'react-hook-form';
+
+interface IFormData {
+  name: string;
+  phone: string;
+  email: string;
+}
 
 export const ConsultationSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  });
+  const { control, handleSubmit: handleFormSubmit, formState: { errors } } = useForm<IFormData>();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.phone) {
-      alert('Пожалуйста, заполните все поля');
-      return;
-    }
-
+  const onSubmit = async (data: IFormData) => {
     setIsLoading(true);
 
     const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeno1cq1rKAAuW3ZtZpr_9DFUBu_zo0LShKAWZkj4TL3rQ6eA/formResponse';
     const formDataToSubmit = new FormData();
-    formDataToSubmit.append('entry.907660670', formData.name);
-    formDataToSubmit.append('entry.805562166', formData.phone);
-    formDataToSubmit.append('entry.1544142625', formData.email);
+    formDataToSubmit.append('entry.907660670', data.name);
+    formDataToSubmit.append('entry.805562166', data.phone);
+    formDataToSubmit.append('entry.1544142625', data.email);
 
     try {
       await fetch(googleFormUrl, {
@@ -81,42 +70,67 @@ export const ConsultationSection = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className={styles.form}>
+          <form onSubmit={handleFormSubmit(onSubmit)} className={styles.form}>
             <div className={styles.formVertical}>
               <div className={styles.formGroup}>
-                <input
-                  type="text"
+                <Controller
                   name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className={styles.input}
-                  placeholder="Ваше имя"
-                  required
+                  control={control}
+                  defaultValue=""
+                  rules={{ required: 'Пожалуйста, введите ваше имя' }}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      className={styles.input}
+                      placeholder="Ваше имя"
+                    />
+                  )}
                 />
+                {errors.name && <span className={styles.error}>{errors.name.message as string}</span>}
               </div>
               
               <div className={styles.formGroup}>
-                <input
-                  type="tel"
+                <Controller
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className={styles.input}
-                  placeholder="Телефон"
-                  required
+                  control={control}
+                  defaultValue=""
+                  rules={{ required: 'Пожалуйста, введите ваш телефон' }}
+                  render={({ field }) => (
+                    <InputMask
+                      mask="+_ (___) ___-__-__"
+                      replacement={{ _: /\d/ }}
+                      {...field}
+                      className={styles.input}
+                      placeholder="+7 (___) ___-__-__"
+                    />
+                  )}
                 />
+                {errors.phone && <span className={styles.error}>{errors.phone.message as string}</span>}
               </div>
               
               <div className={styles.formGroup}>
-                <input
-                  type="email"
+                <Controller
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={styles.input}
-                  placeholder="Email"
-                  required
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: 'Пожалуйста, введите ваш email',
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: 'Пожалуйста, введите корректный email'
+                    }
+                  }}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="email"
+                      className={styles.input}
+                      placeholder="Email"
+                    />
+                  )}
                 />
+                {errors.email && <span className={styles.error}>{errors.email.message as string}</span>}
               </div>
             </div>
             

@@ -212,6 +212,7 @@
 
 .mobileRecordButton,
 .mobileLoginButton {
+  cursor: pointer;
   width: 100%;
   padding: 0.75rem 1.5rem;
   border-radius: 20px;
@@ -272,10 +273,22 @@
   .container {
     padding: 0 1rem;
   }
+
+  .phoneLink {
+    margin-left: 0;
+  }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1140px) {
+  .phoneLink {
+    display: none;
+  }
 
+  .mobileNavLink, .mobilePhoneLink {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 1023px) {
