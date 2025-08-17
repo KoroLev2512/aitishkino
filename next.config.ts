@@ -4,6 +4,18 @@ import path from 'path';
 const nextConfig: NextConfig = {
   // Включаем строгий режим React
   reactStrictMode: true,
+  turbopack: {
+    rules: {
+      '**/*.lottie': [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'static/media/[name].[hash].[ext]',
+          },
+        },
+      ],
+    },
+  },
   
   // Настройка алиасов путей
   webpack: (config) => {
@@ -11,6 +23,12 @@ const nextConfig: NextConfig = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, 'src'),
     };
+
+    config.module.rules.push({
+      test: /\.lottie$/,
+      type: 'asset/resource',
+    });
+
     return config;
   },
   
