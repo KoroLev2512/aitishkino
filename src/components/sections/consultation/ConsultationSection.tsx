@@ -31,25 +31,21 @@ export const ConsultationSection = () => {
 
     setIsLoading(true);
 
+    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeno1cq1rKAAuW3ZtZpr_9DFUBu_zo0LShKAWZkj4TL3rQ6eA/formResponse';
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('entry.907660670', formData.name);
+    formDataToSubmit.append('entry.805562166', formData.phone);
+    formDataToSubmit.append('entry.1544142625', formData.email);
+
     try {
-      // Replace with your actual form submission endpoint
-      const response = await fetch('https://your-api-endpoint.com/submit-form', {
+      await fetch(googleFormUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          form_id: 'consultation_form',
-          ...formData
-        })
+        body: formDataToSubmit,
+        mode: 'no-cors',
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
+      setIsSubmitted(true);
+    } catch {
       alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
     } finally {
       setIsLoading(false);

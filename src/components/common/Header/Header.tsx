@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import logo from '@/../public/images/logo/logo.png';
 import styles from './Header.module.css';
 
 const navigation = [
@@ -43,10 +44,8 @@ const Header = () => {
           {/* Логотип */}
           <Link href="/" className={styles.logo} onClick={closeMenu}>
             <Image
-              src="/images/logo/logo.png"
+              src={logo}
               alt="Айтишкино"
-              width={150}
-              height={40}
               priority
               className={styles.logoImage}
             />
