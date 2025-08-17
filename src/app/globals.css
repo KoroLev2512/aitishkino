@@ -19,6 +19,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   width: 100%;
   min-height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -26,6 +27,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* SF Pro Font */
