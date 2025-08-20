@@ -4,52 +4,22 @@ import StudentCard from '@/components/ui/StudentCard/StudentCard';
 
 const students = [
   {
-    name: 'Егор Корякин',
-    age: '12',
+    name: 'Рома',
+    age: '9',
     course: 'Робототехника',
-    imageUrl: '/images/students/student1.jpg'
+    imageUrl: '/images/logo/students/roma.jpg'
   },
   {
-    name: 'Анна Смирнова',
-    age: '13',
+    name: 'Марвин',
+    age: '12',
     course: 'Программирование',
-    imageUrl: '/images/students/student2.jpg'
+    imageUrl: '/images/logo/students/Marvin.jpg'
   },
   {
-    name: 'Иван Петров',
-    age: '11',
-    course: '3D-моделирование',
-    imageUrl: '/images/students/student3.jpg'
-  },
-  {
-    name: 'Мария Иванова',
-    age: '12',
-    course: 'Веб-дизайн',
-    imageUrl: '/images/students/student4.jpg'
-  },
-  {
-    name: 'Алексей Сидоров',
-    age: '13',
-    course: 'Разработка игр',
-    imageUrl: '/images/students/student5.jpg'
-  },
-  {
-    name: 'Софья Козлова',
-    age: '11',
-    course: 'Мобильные приложения',
-    imageUrl: '/images/students/student6.jpg'
-  },
-  {
-    name: 'Дмитрий Новиков',
-    age: '12',
-    course: 'Искусственный интеллект',
-    imageUrl: '/images/students/student7.jpg'
-  },
-  {
-    name: 'Алиса Морозова',
-    age: '13',
-    course: 'Кибербезопасность',
-    imageUrl: '/images/students/student8.jpg'
+    name: 'Федя',
+    age: '7',
+    course: 'Робототехника',
+    imageUrl: '/images/logo/students/fedya.jpg'
   }
 ];
 

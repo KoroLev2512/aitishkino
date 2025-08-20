@@ -22,12 +22,12 @@ export const YouAreCodeSection = () => {
           {/* Text content */}
           <div className={styles.textContent}>
             <h2 className={styles.title}>
-              Ты — код,
-              <span className={styles.highlight}>который изменит мир.</span>
-              <span className={styles.highlight}>Пора запустить программу.</span>
+            Готовьтесь
+              <span className={styles.highlight}>к настоящему и будущему!</span>
+
             </h2>
             <p className={styles.description}>
-              В &ldquo;Айтишкино&rdquo; мы не просто учим — мы создаём юных инноваторов! Наши два ключевых направления идеально дополняют друг друга:
+            В Айтишкино мы развиваем ребенка как личность, прокачивая не только технические навыки, но и soft скиллы. Дети с нами учатся работать в команде и не боятся ошибок, чтобы быть востребованными абсолютно в любой сфере!
             </p>
           </div>
         </div>

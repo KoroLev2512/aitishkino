@@ -54,6 +54,7 @@
   scroll-snap-type: x mandatory;
   scroll-padding: 0 16px;
   scrollbar-width: none; /* Firefox */
+  justify-content: center; /* center items when not overflowing */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -112,6 +113,8 @@
     gap: 24px;
     padding: 0 24px;
     overflow: visible;
+    justify-content: center; /* center the grid within container */
+    justify-items: center;   /* center items within their cells */
   }
   
   .scrollIndicator {
@@ -130,16 +133,20 @@
     gap: 32px;
     padding: 0 32px;
     overflow: visible;
+    justify-content: center;
+    justify-items: center;
   }
 }
 
 @media (min-width: 1280px) {
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* keep 3 columns to center 3 cards */
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 32px;
+    justify-content: center;
+    justify-items: center;
   }
 }
 
