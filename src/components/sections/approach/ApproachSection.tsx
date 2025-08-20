@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ApproachSection.module.css';
 import Lottie from 'lottie-react';
-import approachAnimation from '@/assets/animations/EarningSection.json';
+import approachAnimation from '@/assets/animations/AdvantagesSection.json';
 
 export const ApproachSection = () => {
   return (
