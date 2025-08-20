@@ -32,4 +32,4 @@ export const FullscreenTextSection: React.FC<FullscreenTextSectionProps> = ({
   );
 };
 
-export default FullscreenTextSection;
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PlatformSection.module.css';
-import AdvItem from '@/components/ui/AdvItem/AdvItem';
+import { AdvItem } from '@/components/ui/AdvItem/AdvItem';
 import { AdvantageIcon } from '@/components/ui/AdvantageIcons';
 import Lottie from 'lottie-react';
 import platformAnimation from '@/assets/animations/PlatformSection.json';
@@ -82,4 +82,4 @@ export const PlatformSection = () => {
   );
 };
 
-export default PlatformSection;
+

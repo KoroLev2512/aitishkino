@@ -55,4 +55,4 @@ export const FAQItem: React.FC<FAQItemProps> = ({
   );
 };
 
-export default FAQItem;
+

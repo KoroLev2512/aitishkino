@@ -1,25 +1,29 @@
 import React from 'react';
 import styles from './StudentCard.module.css';
+import Image, { StaticImageData } from 'next/image';
 
 interface StudentCardProps {
   name: string;
   age: string;
   course: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
 }
 
-export const StudentCard: React.FC<StudentCardProps> = ({ 
-  name, 
-  age, 
+export const StudentCard: React.FC<StudentCardProps> = ({
+  name,
+  age,
   course,
-  imageUrl 
+  imageUrl,
 }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img 
-          src={imageUrl} 
+        <Image
+          src={imageUrl}
+          alt={name}
           className={styles.studentImage}
+          layout="fill"
+          objectFit="cover"
         />
         <div className={styles.overlay} />
       </div>
@@ -34,5 +38,3 @@ export const StudentCard: React.FC<StudentCardProps> = ({
     </div>
   );
 };
-
-export default StudentCard;

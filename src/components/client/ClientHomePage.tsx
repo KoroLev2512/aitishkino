@@ -7,14 +7,14 @@ import { CoursesSection } from '../sections/courses/CoursesSection';
 import { FullscreenTextSection } from '../sections/fullscreen-text/FullscreenTextSection';
 import { ApproachSection } from '../sections/approach/ApproachSection';
 import { AdvantagesSection } from '../sections/advantages/AdvantagesSection';
-import PlatformSection from '../sections/platform/PlatformSection';
-import EarningSection from '../sections/earning/EarningSection';
-import StudentsSection from '../sections/students/StudentsSection';
-import ShopSection from '../sections/shop/ShopSection';
-import FAQSection from '../sections/faq/FAQSection';
-import ConsultationSection from '../sections/consultation/ConsultationSection';
-import Footer from '../sections/footer/Footer';
-import PageLayout from '../layout/PageLayout';
+import { PlatformSection } from '../sections/platform/PlatformSection';
+import { EarningSection } from '../sections/earning/EarningSection';
+import { StudentsSection } from '../sections/students/StudentsSection';
+import { ShopSection } from '../sections/shop/ShopSection';
+import { FAQSection } from '../sections/faq/FAQSection';
+import { ConsultationSection } from '../sections/consultation/ConsultationSection';
+import { Footer } from '../sections/footer/Footer';
+import { PageLayout } from '../layout/PageLayout';
 
 export default function ClientHomePage() {
   return (

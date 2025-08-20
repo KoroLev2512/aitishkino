@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AdvantagesSection.module.css';
-import AdvantageCard from '@/components/ui/AdvantageCard/AdvantageCard';
+import { AdvantageCard } from '@/components/ui/AdvantageCard/AdvantageCard';
 import { AdvantageIcon } from '@/components/ui/AdvantageIcons';
 
 const advantages = [
@@ -68,4 +68,4 @@ export const AdvantagesSection = () => {
   );
 };
 
-export default AdvantagesSection;
+

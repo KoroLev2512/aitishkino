@@ -27,4 +27,4 @@ export const AdvantageCard: React.FC<AdvantageCardProps> = ({
   );
 };
 
-export default AdvantageCard;
+

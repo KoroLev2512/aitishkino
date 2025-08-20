@@ -23,4 +23,4 @@ export const EarningStepCard: React.FC<EarningStepCardProps> = ({
   );
 };
 
-export default EarningStepCard;
+

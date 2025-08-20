@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './CoursesSection.module.css';
-import CourseCard from '@/components/ui/CourseCard/CourseCard';
+import { CourseCard } from '@/components/ui/CourseCard/CourseCard';
 import { ArrowRight } from 'lucide-react';
 
 interface Course {
@@ -255,4 +255,4 @@ export const CoursesSection = () => {
   );
 };
 
-export default CoursesSection;
+

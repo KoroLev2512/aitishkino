@@ -1,25 +1,28 @@
 import React from 'react';
+import marvin from '@/../public/images/students/marvin.jpg';
+import fedya from '@/../public/images/students/fedya.jpg';
+import roma from '@/../public/images/students/roma.jpg';
 import styles from './StudentsSection.module.css';
-import StudentCard from '@/components/ui/StudentCard/StudentCard';
+import { StudentCard } from '@/components/ui/StudentCard/StudentCard';
 
 const students = [
   {
     name: 'Рома',
     age: '9',
     course: 'Робототехника',
-    imageUrl: '/images/logo/students/roma.jpg'
+    imageUrl: roma
   },
   {
     name: 'Марвин',
     age: '12',
     course: 'Программирование',
-    imageUrl: '/images/logo/students/Marvin.jpg'
+    imageUrl: marvin
   },
   {
     name: 'Федя',
     age: '7',
     course: 'Робототехника',
-    imageUrl: '/images/logo/students/fedya.jpg'
+    imageUrl: fedya
   }
 ];
 
@@ -53,5 +56,3 @@ export const StudentsSection: React.FC = () => {
     </section>
   );
 };
-
-export default StudentsSection;

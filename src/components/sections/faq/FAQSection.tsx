@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import FAQItem from '@/components/ui/FAQItem/FAQItem';
+import { FAQItem } from '@/components/ui/FAQItem/FAQItem';
 import styles from './FAQSection.module.css';
 
 interface FAQItemType {
@@ -79,4 +79,4 @@ export const FAQSection = () => {
   );
 };
 
-export default FAQSection;
+

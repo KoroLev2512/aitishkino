@@ -158,4 +158,4 @@ export const ConsultationSection = () => {
   );
 };
 
-export default ConsultationSection;
+

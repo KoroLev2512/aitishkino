@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './EarningSection.module.css';
-import EarningStepCard from '@/components/ui/EarningStepCard/EarningStepCard';
+import { EarningStepCard } from '@/components/ui/EarningStepCard/EarningStepCard';
 import Lottie from 'lottie-react';
 import earningAnimation from '@/assets/animations/EarningSection.json';
 
@@ -49,4 +49,4 @@ export const EarningSection = () => {
   );
 };
 
-export default EarningSection;
+

@@ -41,4 +41,4 @@ export const ApproachSection = () => {
   );
 };
 
-export default ApproachSection;
+

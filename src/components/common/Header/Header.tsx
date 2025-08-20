@@ -13,7 +13,7 @@ const navigation = [
   { name: 'Контакты', href: '#contacts' },
 ];
 
-const Header = () => {
+export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -188,4 +188,3 @@ const Header = () => {
   );
 };
 
-export default Header;

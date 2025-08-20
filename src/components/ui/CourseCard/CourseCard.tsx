@@ -13,7 +13,7 @@ interface CourseCardProps {
   onToggleExpand: (id: string) => void;
 }
 
-const CourseCard: React.FC<CourseCardProps> = React.memo(({ 
+export const CourseCard: React.FC<CourseCardProps> = React.memo(({ 
   id,
   title, 
   age, 
@@ -24,10 +24,8 @@ const CourseCard: React.FC<CourseCardProps> = React.memo(({
   isExpanded,
   onToggleExpand
 }) => {
-  console.log(`Rendering card ${id}, isExpanded:`, isExpanded);
   
   const handleToggle = React.useCallback(() => {
-    console.log(`Card ${id} button clicked, current expanded:`, isExpanded);
     onToggleExpand(id);
   }, [id, isExpanded, onToggleExpand]);
 
@@ -84,4 +82,4 @@ const CourseCard: React.FC<CourseCardProps> = React.memo(({
 
 CourseCard.displayName = 'CourseCard';
 
-export default CourseCard;
+

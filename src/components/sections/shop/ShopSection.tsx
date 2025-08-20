@@ -82,4 +82,4 @@ export const ShopSection = () => {
   );
 };
 
-export default ShopSection;
+
