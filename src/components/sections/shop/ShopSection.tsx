@@ -40,12 +40,52 @@ const products: Product[] = [
   { id: 27, name: 'PowerBank',                 type: 'accessory', points: 700 },
 ];
 
+// Map product names to gift image filenames in public/images/gifts/
+const giftImageByName: Record<string, string> = {
+  'Плейстейшн 5': 'ps5.jpg',
+  'Nintendo Switch': 'nintendo.jpg',
+  'Apple Watch SE': 'apple watch.jpg',
+  'Ноутбук как в классе': 'laptop.jpg',
+  'AirPods Pro': 'airpods.png',
+  'Mi Band 10': 'xiaomi.jpg',
+  'Яндекс Алиса': 'yandex.jpg',
+  'Мягкая игрушка': 'toy.jpg',
+  'Футболка мерч': 'футболка1.jpg',
+  'Солнцезащитные очки': 'glasses.jpg',
+  'Мышь': 'mouse.jpg',
+  'Брелки': 'brelok.jpg',
+  'Набор стикеров': 'stickers.jpg',
+  'Кубик Рубика Майнкрафт': 'mine.jpg',
+  'Ночник Майнкрафт': 'mine.jpg',
+  // The following products currently have no exact image file in gifts folder:
+  // 'iPad Air 11': undefined,
+  // 'Ручки': undefined,
+  // 'Магфия': undefined,
+  // 'Майнфия': undefined,
+  // 'Кружка': undefined,
+  // 'Детский фотоаппарат': undefined,
+  // 'Роббо лаборатория': undefined,
+  // 'Оплатить месяц курса': undefined,
+  // 'Сквиж': undefined,
+  // 'Попрыгунчик': undefined,
+  // 'Браслет': undefined,
+  // 'PowerBank': undefined,
+};
+
+function getGiftImageSrc(name: string): string | undefined {
+  const filename = giftImageByName[name];
+  if (!filename) return undefined;
+  // Encode only filename part to support spaces and non-latin characters
+  const encoded = encodeURIComponent(filename).replace(/%2F/g, '/');
+  return `/images/gifts/${encoded}`;
+}
+
 export const ShopSection = () => {
   const [duplicatedProducts, setDuplicatedProducts] = useState<Product[]>([]);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Дублируем массив для бесконечной анимации
+    // Duplicate array for infinite scroll
     setDuplicatedProducts([...products, ...products, ...products]);
   }, []);
 
@@ -54,7 +94,7 @@ export const ShopSection = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>АйтиШоп</h2>
         <p className={styles.description}>
-        Мы ценим твои успехи! За каждый пройденный урок, выполненное задание и участие в мероприятиях ты получаешь Айтишки - внутреннюю валюту, которую можно обменять на что-то полезное в нашем магазине. Мотивация и вознаграждение ждут тебя!
+          Мы ценим твои успехи! За каждый пройденный урок, выполненное задание и участие в мероприятиях ты получаешь Айтишки - внутреннюю валюту, которую можно обменять на что-то полезное в нашем магазине. Мотивация и вознаграждение ждут тебя!
         </p>
       </div>
 
@@ -64,22 +104,28 @@ export const ShopSection = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className={`${styles.productsContainer} ${isHovered ? styles.pauseAnimation : ''}`}>
-          {duplicatedProducts.map((product, index) => (
-            <div
-              key={`${product.id}-${index}`}
-              className={`${styles.productCard} ${styles[product.type]}`}
-            >
-              <div className={styles.productImage}></div>
-              <div className={styles.productInfo}>
-                <h3 className={styles.productName}>{product.name}</h3>
-                <div className={styles.points}>{product.points} баллов</div>
+          {duplicatedProducts.map((product, index) => {
+            const src = getGiftImageSrc(product.name);
+            return (
+              <div
+                key={`${product.id}-${index}`}
+                className={`${styles.productCard} ${styles[product.type]}`}
+              >
+                <div className={styles.productImage}>
+                  {src ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={src} alt={product.name} loading="lazy" />
+                  ) : null}
+                </div>
+                <div className={styles.productInfo}>
+                  <h3 className={styles.productName}>{product.name}</h3>
+                  <div className={styles.points}>{product.points} баллов</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
 };
-
-

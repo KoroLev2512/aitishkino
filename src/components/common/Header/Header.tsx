@@ -20,7 +20,7 @@ export const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!window.confirm('Позвонить по номеру +7 (988) 231 32 xx?')) {
+    if (!window.confirm('Позвонить по номеру +7 (495) 123 35-85?')) {
       e.preventDefault();
     }
   };
@@ -103,11 +103,11 @@ export const Header = () => {
             ))}
             
             <a 
-              href="tel:+798823132xx" 
+              href="tel:+74951233585" 
               className={styles.phoneLink}
               onClick={handlePhoneClick}
-            >
-              +7 (988) 231 32 xx
+            > 
+              +7 (495) 123 35-85
             </a>
           </div>
 
@@ -158,14 +158,14 @@ export const Header = () => {
               </Link>
             ))}
             <a 
-              href="tel:+798823132xx" 
+              href="tel:+74951233585" 
               className={styles.mobilePhoneLink}
               onClick={(e) => {
                 closeMenu();
                 handlePhoneClick(e);
               }}
             >
-              +7 (988) 231 32 xx
+              +7 (495) 123 35-85
             </a>
             <div className={styles.mobileButtons}>
               <button 

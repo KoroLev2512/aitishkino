@@ -18,13 +18,13 @@ export default function OrganizationSchema() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "telephone": "+7 (XXX) XXX-XX-XX",
-      "email": "info@aitishkino.ru",
+      "telephone": "+7 495 123 35 85",
+      "email": "itishkino@gmail.com",
       "availableLanguage": ["Russian"]
     },
     "sameAs": [
-      "https://vk.com/aitishkino",
-      "https://t.me/aitishkino"
+      "https://vk.com/itishkino_school",
+      "https://t.me/itishkino_school"
     ]
   };
 

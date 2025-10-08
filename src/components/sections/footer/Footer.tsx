@@ -30,15 +30,15 @@ export const Footer = () => {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <Phone className={styles.contactIcon} size={20} />
-                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                <a href="tel:+74951233585">+7 (495) 123 35-85</a>
               </li>
               <li className={styles.contactItem}>
                 <Mail className={styles.contactIcon} size={20} />
-                <a href="mailto:info@itishkino.ru">info@itishkino.ru</a>
+                <a href="mailto:itishkino@gmail.com">itishkino@gmail.com</a>
               </li>
               <li className={styles.contactItem}>
                 <MapPin className={styles.contactIcon} size={20} />
-                г. Москва, ул. Примерная, д. 123, офис 45
+                г. Москва, Марьинский бульвар, 4
               </li>
               <li className={styles.contactItem}>
                 <Clock className={styles.contactIcon} size={20} />
@@ -68,7 +68,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} Айтишкино. Все права защищены.
+            {new Date().getFullYear()} Айтишкино. Все права защищены.
           </div>
           <div className={styles.socialLinks}>
             <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
@@ -86,7 +86,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
-
-
-
