@@ -1,9 +1,9 @@
-import React from 'react';
-import CourseSchema from '@/components/seo/CourseSchema';
-import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import React from "react";
+import CourseSchema from "@/components/seo/CourseSchema";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 // Добавляем конфигурацию для статического экспорта
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const revalidate = false;
 
 export default function PythonCoursePage() {
@@ -11,7 +11,7 @@ export default function PythonCoursePage() {
     <>
       <h1>Курс по Python для начинающих</h1>
       <p>Изучите основы программирования с нуля на языке Python</p>
-      
+
       {/* Микроразметка курса */}
       <CourseSchema
         courseName="Основы программирования на Python"
@@ -21,13 +21,16 @@ export default function PythonCoursePage() {
         price={15000}
         instructor="Иван Иванов"
       />
-      
+
       {/* Хлебные крошки */}
       <BreadcrumbSchema
         items={[
-          { name: 'Главная', item: 'https://aitishkino.ru' },
-          { name: 'Курсы', item: 'https://aitishkino.ru/courses' },
-          { name: 'Python для начинающих', item: 'https://aitishkino.ru/courses/python' }
+          { name: "Главная", item: "https://aitishkino.ru" },
+          { name: "Курсы", item: "https://aitishkino.ru/courses" },
+          {
+            name: "Python для начинающих",
+            item: "https://aitishkino.ru/courses/python",
+          },
         ]}
       />
     </>
