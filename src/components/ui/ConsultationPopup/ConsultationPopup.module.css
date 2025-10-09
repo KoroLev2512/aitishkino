@@ -1,3 +1,4 @@
+/* Added fade-in animation for smooth appearance */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -30,6 +31,7 @@
   animation: fadeIn 0.3s ease-out;
 }
 
+/* Reduced modal size and added slide-up animation */
 .modal {
   position: relative;
   background-color: white;
@@ -39,16 +41,18 @@
   width: 100%;
   max-width: 900px;
   max-height: 85vh;
-  aspect-ratio: 900 / 550;
   animation: slideUp 0.4s ease-out;
 }
 
+/* Reduced left panel width to 320px for more compact layout */
 .container {
   display: grid;
   grid-template-columns: 320px 1fr;
   height: 100%;
 }
 
+/* Left Panel - Form */
+/* Reduced padding and removed overflow-y to prevent scrolling */
 .leftPanel {
   padding: 24px 20px;
   background-color: white;
@@ -60,6 +64,7 @@
   max-width: 100%;
 }
 
+/* Reduced title font size to 20px */
 .title {
   font-size: 20px;
   font-weight: 700;
@@ -68,6 +73,7 @@
   line-height: 1.2;
 }
 
+/* Reduced subtitle margin and font size */
 .subtitle {
   font-size: 13px;
   color: #6b7280;
@@ -75,6 +81,7 @@
   line-height: 1.4;
 }
 
+/* Reduced gap between form elements */
 .form {
   display: flex;
   flex-direction: column;
@@ -94,6 +101,7 @@
   margin-bottom: 6px;
 }
 
+/* Reduced input height to 40px */
 .input {
   width: 100%;
   height: 40px;
@@ -115,6 +123,7 @@
   box-shadow: 0 0 0 3px rgba(0, 177, 143, 0.1);
 }
 
+/* Reduced button height to 44px and margin */
 .submitButton {
   width: 100%;
   height: 44px;
@@ -137,6 +146,7 @@
   background-color: #009d7f;
 }
 
+/* Reduced privacy text size and margin */
 .privacy {
   font-size: 10px;
   color: #9ca3af;
@@ -144,6 +154,8 @@
   line-height: 1.4;
 }
 
+/* Right Panel - Hero */
+/* Reduced padding and removed overflow-y */
 .rightPanel {
   position: relative;
   background: linear-gradient(135deg, #ffd4a3 0%, #ffc4d4 50%, #c4d4ff 100%);
@@ -157,7 +169,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.3;
-  background-image: url("/images/popup/popup.jpg");
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled-gyCcq5bvXDfnWJiMnXJ3BsvmwF8N5C.png");
   background-size: cover;
   background-position: center;
   filter: blur(4px);
@@ -168,6 +180,7 @@
   z-index: 10;
 }
 
+/* Reduced hero title to 26px */
 .heroTitle {
   font-size: 26px;
   font-weight: 700;
@@ -176,6 +189,7 @@
   line-height: 1.3;
 }
 
+/* Reduced hero text margin */
 .heroText {
   font-size: 14px;
   color: #4b5563;
@@ -189,6 +203,7 @@
   gap: 10px;
 }
 
+/* Reduced feature card padding */
 .featureCard {
   background-color: #00b18f;
   border-radius: 8px;
@@ -219,6 +234,7 @@
   font-weight: 700;
 }
 
+/* Close Button */
 .closeButton {
   position: absolute;
   top: 20px;
@@ -241,6 +257,8 @@
   background-color: rgba(209, 213, 219, 0.3);
 }
 
+/* Responsive */
+/* Fixed mobile layout to show submit button properly */
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
@@ -252,22 +270,36 @@
 
   .modal {
     max-width: 500px;
-    aspect-ratio: auto;
+    aspect-ratio: auto; /* ✅ убрано фикс. соотношение */
+    max-height: 90vh;
+    overflow-y: auto; /* ✅ добавлена прокрутка */
+    border-radius: 12px;
+  }
+
+  .leftPanel {
+    padding: 20px;
+    overflow-y: visible; /* ✅ не конфликтует с модалкой */
   }
 }
 
 @media (max-width: 640px) {
+  .backdrop {
+    padding: 10px;
+  }
+
   .modal {
-    padding-top: 40px;
+    max-height: 95vh;
+    border-radius: 12px;
+    overflow-y: auto; /* ✅ прокрутка и на очень малых экранах */
   }
 
   .leftPanel {
-    padding: 20px 18px 24px;
+    padding: 20px 16px;
+    overflow-y: visible;
   }
 
   .title {
-    font-size: 22px;
-    margin-top: 6px;
+    font-size: 18px;
   }
 
   .subtitle {
@@ -275,16 +307,41 @@
     margin-bottom: 16px;
   }
 
-  .heroTitle {
-    font-size: 22px;
+  .form {
+    gap: 12px;
   }
 
-  .heroText {
-    font-size: 13px;
-    margin-bottom: 14px;
+  .input {
+    height: 44px;
+    font-size: 16px;
   }
 
-  .features {
-    grid-template-columns: 1fr;
+  .submitButton {
+    height: 48px;
+    font-size: 15px;
   }
+
+  .privacy {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  .closeButton {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+  overflow: hidden;
 }
