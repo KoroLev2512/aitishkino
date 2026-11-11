@@ -4,40 +4,9 @@ import { AdvItem } from '@/components/ui/AdvItem/AdvItem';
 import { AdvantageIcon } from '@/components/ui/AdvantageIcons';
 import Lottie from 'lottie-react';
 import platformAnimation from '@/assets/animations/PlatformSection.json';
+import { PLATFORM_FEATURES } from '@/content/platform';
 
 export const PlatformSection = () => {
-  const platformFeatures = [
-    {
-      id: 'repeat',
-      title: 'Повторяйте',
-      description:
-        'Методические материалы и домашние задания по пройденным темам для закрепления знаний',
-      icon: 'repeat',
-      iconColor: 'text-blue-500',
-    },
-    {
-      id: 'feedback',
-      title: 'Обратная связь',
-      description: 'Персональные комментарии преподавателей к каждой работе',
-      icon: 'message-circle',
-      iconColor: 'text-green-500',
-    },
-    {
-      id: 'schedule',
-      title: 'Расписание',
-      description: 'Ближайшие занятия и школьные мероприятия',
-      icon: 'calendar',
-      iconColor: 'text-purple-500',
-    },
-    {
-      id: 'progress',
-      title: 'Прогресс',
-      description: 'Наглядная статистика по пройденным модулям',
-      icon: 'bar-chart-2',
-      iconColor: 'text-orange-500',
-    },
-  ];
-
   return (
     <section className={styles.section} id="platform">
       <div className={styles.container}>
@@ -62,7 +31,7 @@ export const PlatformSection = () => {
 
           <div className={styles.rightColumn}>
             <div className={styles.grid}>
-              {platformFeatures.map((feature) => (
+              {PLATFORM_FEATURES.map((feature) => (
                 <div key={feature.id} className={styles.gridRow}>
                   <AdvItem
                     text={feature.title}

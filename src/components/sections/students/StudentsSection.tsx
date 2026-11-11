@@ -1,30 +1,7 @@
 import React from 'react';
-import marvin from '@/../public/images/students/marvin.jpg';
-import fedya from '@/../public/images/students/fedya.jpg';
-import roma from '@/../public/images/students/roma.jpg';
 import styles from './StudentsSection.module.css';
 import { StudentCard } from '@/components/ui/StudentCard/StudentCard';
-
-const students = [
-  {
-    name: 'Рома',
-    age: '9',
-    course: 'Робототехника',
-    imageUrl: roma,
-  },
-  {
-    name: 'Марвин',
-    age: '12',
-    course: 'Программирование',
-    imageUrl: marvin,
-  },
-  {
-    name: 'Федя',
-    age: '7',
-    course: 'Робототехника',
-    imageUrl: fedya,
-  },
-];
+import { STUDENT_PROJECTS } from '@/content/students';
 
 export const StudentsSection: React.FC = () => {
   return (
@@ -35,13 +12,13 @@ export const StudentsSection: React.FC = () => {
 
         <div className={styles.gridContainer}>
           <div className={styles.grid}>
-            {students.map((student, index) => (
+            {STUDENT_PROJECTS.map((student) => (
               <StudentCard
-                key={index}
+                key={student.id}
                 name={student.name}
                 age={student.age}
                 course={student.course}
-                imageUrl={student.imageUrl}
+                imageUrl={student.imagePath}
               />
             ))}
           </div>

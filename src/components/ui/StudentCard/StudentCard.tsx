@@ -6,7 +6,7 @@ interface StudentCardProps {
   name: string;
   age: string;
   course: string;
-  imageUrl: StaticImageData;
+  imageUrl: string | StaticImageData;
 }
 
 export const StudentCard: React.FC<StudentCardProps> = ({ name, age, course, imageUrl }) => {
@@ -15,10 +15,11 @@ export const StudentCard: React.FC<StudentCardProps> = ({ name, age, course, ima
       <div className={styles.imageContainer}>
         <Image
           src={imageUrl}
-          alt={name}
+          alt={`Проект ученика: ${name}, ${age} лет, курс ${course}`}
           className={styles.studentImage}
-          layout="fill"
-          objectFit="cover"
+          fill
+          sizes="(max-width: 768px) 80vw, 320px"
+          style={{ objectFit: 'cover' }}
         />
         <div className={styles.overlay} />
       </div>
