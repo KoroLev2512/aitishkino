@@ -1,70 +1,74 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './ConsultationSection.module.css';
-import { Send } from 'lucide-react';
+import Link from 'next/link';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { InputMask } from '@react-input/mask';
 import { useForm, Controller } from 'react-hook-form';
-
-interface IFormData {
-  name: string;
-  phone: string;
-  email: string;
-}
+import { zodResolver } from '@hookform/resolvers/zod';
+import styles from './ConsultationSection.module.css';
+import { leadSchema, type LeadFormData } from '@/lib/validations/lead';
+import { submitLead } from '@/lib/api/leads';
+import { trackEvent } from '@/lib/analytics/track';
 
 export const ConsultationSection = () => {
-  const {
-    control,
-    handleSubmit: handleFormSubmit,
-    formState: { errors },
-  } = useForm<IFormData>();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = async (data: IFormData) => {
-    setIsLoading(true);
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<LeadFormData>({
+    resolver: zodResolver(leadSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      consent: true,
+      honeypot: '',
+    },
+    shouldFocusError: true,
+  });
 
-    const googleFormUrl =
-      'https://docs.google.com/forms/d/e/1FAIpQLSeno1cq1rKAAuW3ZtZpr_9DFUBu_zo0LShKAWZkj4TL3rQ6eA/formResponse';
-    const formDataToSubmit = new FormData();
-    formDataToSubmit.append('entry.907660670', data.name);
-    formDataToSubmit.append('entry.805562166', data.phone);
-    formDataToSubmit.append('entry.1544142625', data.email);
+  const onSubmit = async (data: LeadFormData) => {
+    setSubmitError(null);
 
-    try {
-      await fetch(googleFormUrl, {
-        method: 'POST',
-        body: formDataToSubmit,
-        mode: 'no-cors',
-      });
+    const result = await submitLead(data);
 
+    if (result.success) {
       setIsSubmitted(true);
-    } catch {
-      alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
-    } finally {
-      setIsLoading(false);
+      trackEvent('lead_form_submitted', {
+        form: 'consultation',
+      });
+    } else {
+      setSubmitError(
+        result.error || 'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.'
+      );
     }
   };
 
   if (isSubmitted) {
     return (
-      <div className={styles.successContainer}>
-        <div className={styles.successContent}>
-          <div className={styles.successIcon}>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20 6L9 17L4 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+      <section className={styles.section} id="application-form">
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <div className={styles.successContainer}>
+              <div className={styles.successContent}>
+                <div className={styles.successIcon}>
+                  <CheckCircle2 size={48} color="white" />
+                </div>
+                <h2 className={styles.successTitle}>Заявка успешно отправлена!</h2>
+                <p className={styles.successText}>
+                  Спасибо за обращение. Наш методист свяжется с вами в течение 10 минут, ответит на
+                  все вопросы и подберет удобное время для пробного урока.
+                </p>
+              </div>
+            </div>
           </div>
-          <h2 className={styles.successTitle}>Заявка отправлена!</h2>
-          <p className={styles.successText}>Мы свяжемся с вами в течение 10 минут</p>
         </div>
-      </div>
+      </section>
     );
   }
 
@@ -75,86 +79,174 @@ export const ConsultationSection = () => {
           <div className={styles.pattern} aria-hidden="true" />
 
           <div className={styles.header}>
-            <h2 className={styles.title}>Запишитесь на консультацию</h2>
+            <h2 className={styles.title}>Запишитесь на бесплатный пробный урок</h2>
             <p className={styles.subtitle}>
-              Оставьте заявку, и наш менеджер свяжется с вами в течение 10 минут, чтобы обсудить
-              детали обучения и ответить на все ваши вопросы
+              Оставьте заявку, и наш методист свяжется с вами в течение 10 минут, чтобы ответить на
+              вопросы и записать вашего ребенка на первое занятие.
             </p>
           </div>
 
-          <form onSubmit={handleFormSubmit(onSubmit)} className={styles.form}>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles.form} noValidate>
+            {/* Ошибка отправки формы (вместо alert) */}
+            {submitError && (
+              <div className={styles.alertError} role="alert" aria-live="assertive">
+                <div className="flex items-center gap-2">
+                  <AlertCircle size={18} className="shrink-0" />
+                  <span>{submitError}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Honeypot поле для защиты от спам-ботов */}
+            <div className={styles.honeypot} aria-hidden="true">
+              <label htmlFor="consultation-honeypot">Не заполняйте это поле</label>
+              <input
+                id="consultation-honeypot"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                {...register('honeypot')}
+              />
+            </div>
+
             <div className={styles.formVertical}>
+              {/* Поле: Имя */}
               <div className={styles.formGroup}>
-                <Controller
-                  name="name"
-                  control={control}
-                  defaultValue=""
-                  rules={{ required: 'Пожалуйста, введите ваше имя' }}
-                  render={({ field }) => (
-                    <input {...field} type="text" className={styles.input} placeholder="Ваше имя" />
-                  )}
+                <label htmlFor="consultation-name" className={styles.label}>
+                  Ваше имя{' '}
+                  <span aria-hidden="true" className="text-red-500">
+                    *
+                  </span>
+                </label>
+                <input
+                  id="consultation-name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Как к вам обращаться?"
+                  aria-required="true"
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? 'consultation-name-error' : undefined}
+                  className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
+                  disabled={isSubmitting}
+                  {...register('name')}
                 />
                 {errors.name && (
-                  <span className={styles.error}>{errors.name.message as string}</span>
+                  <span id="consultation-name-error" className={styles.error} role="alert">
+                    {errors.name.message}
+                  </span>
                 )}
               </div>
 
+              {/* Поле: Телефон */}
               <div className={styles.formGroup}>
+                <label htmlFor="consultation-phone" className={styles.label}>
+                  Номер телефона{' '}
+                  <span aria-hidden="true" className="text-red-500">
+                    *
+                  </span>
+                </label>
                 <Controller
                   name="phone"
                   control={control}
-                  defaultValue=""
-                  rules={{ required: 'Пожалуйста, введите ваш телефон' }}
                   render={({ field }) => (
                     <InputMask
+                      id="consultation-phone"
                       mask="+_ (___) ___-__-__"
                       replacement={{ _: /\d/ }}
-                      {...field}
-                      className={styles.input}
+                      autoComplete="tel"
+                      inputMode="tel"
                       placeholder="+7 (___) ___-__-__"
+                      aria-required="true"
+                      aria-invalid={!!errors.phone}
+                      aria-describedby={errors.phone ? 'consultation-phone-error' : undefined}
+                      className={`${styles.input} ${errors.phone ? styles.inputError : ''}`}
+                      disabled={isSubmitting}
+                      value={field.value}
+                      onChange={field.onChange}
+                      onBlur={field.onBlur}
+                      ref={field.ref}
                     />
                   )}
                 />
                 {errors.phone && (
-                  <span className={styles.error}>{errors.phone.message as string}</span>
+                  <span id="consultation-phone-error" className={styles.error} role="alert">
+                    {errors.phone.message}
+                  </span>
                 )}
               </div>
 
+              {/* Поле: Email */}
               <div className={styles.formGroup}>
-                <Controller
-                  name="email"
-                  control={control}
-                  defaultValue=""
-                  rules={{
-                    required: 'Пожалуйста, введите ваш email',
-                    pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: 'Пожалуйста, введите корректный email',
-                    },
-                  }}
-                  render={({ field }) => (
-                    <input {...field} type="email" className={styles.input} placeholder="Email" />
-                  )}
+                <label htmlFor="consultation-email" className={styles.label}>
+                  Электронная почта{' '}
+                  <span aria-hidden="true" className="text-red-500">
+                    *
+                  </span>
+                </label>
+                <input
+                  id="consultation-email"
+                  type="email"
+                  autoComplete="email"
+                  inputMode="email"
+                  placeholder="name@example.com"
+                  aria-required="true"
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? 'consultation-email-error' : undefined}
+                  className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
+                  disabled={isSubmitting}
+                  {...register('email')}
                 />
                 {errors.email && (
-                  <span className={styles.error}>{errors.email.message as string}</span>
+                  <span id="consultation-email-error" className={styles.error} role="alert">
+                    {errors.email.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Чекбокс: Согласие на ОПД (152-ФЗ) */}
+              <div className="w-full">
+                <div className={styles.consentGroup}>
+                  <input
+                    id="consultation-consent"
+                    type="checkbox"
+                    className={styles.checkbox}
+                    aria-required="true"
+                    aria-invalid={!!errors.consent}
+                    aria-describedby={errors.consent ? 'consultation-consent-error' : undefined}
+                    disabled={isSubmitting}
+                    {...register('consent')}
+                  />
+                  <label htmlFor="consultation-consent" className={styles.consentLabel}>
+                    Я даю согласие на обработку персональных данных в соответствии с{' '}
+                    <Link href="/privacy" className={styles.privacyLink} target="_blank">
+                      политикой конфиденциальности
+                    </Link>
+                  </label>
+                </div>
+                {errors.consent && (
+                  <span id="consultation-consent-error" className={styles.error} role="alert">
+                    {errors.consent.message}
+                  </span>
                 )}
               </div>
             </div>
 
             <div className={styles.formFooter}>
-              <button type="submit" className={styles.submitButton} disabled={isLoading}>
-                {isLoading ? 'Отправка...' : 'Отправить заявку'}
-                {!isLoading && <Send size={18} />}
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <span>Отправка заявки...</span>
+                ) : (
+                  <>
+                    <span>Отправить заявку</span>
+                    <Send size={18} className={styles.buttonIcon} />
+                  </>
+                )}
               </button>
-
-              <p className={styles.privacyText}>
-                Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь
-                с{' '}
-                <a href="/privacy" className={styles.privacyLink}>
-                  политикой конфиденциальности
-                </a>
-              </p>
             </div>
           </form>
         </div>
