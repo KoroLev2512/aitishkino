@@ -1,8 +1,4 @@
-'use client';
-
-import Script from 'next/script';
-
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   name: string;
   item: string;
 }
@@ -24,8 +20,7 @@ export default function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
   };
 
   return (
-    <Script
-      id="breadcrumb-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
     />

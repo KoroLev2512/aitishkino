@@ -1,56 +1,46 @@
-'use client';
-
-import Script from 'next/script';
+import { siteConfig } from '@/config/site';
 
 interface CourseSchemaProps {
   courseName: string;
   description: string;
-  startDate: string;
-  endDate: string;
-  price: number;
-  instructor: string;
+  courseMode?: string;
+  price?: number;
   image?: string;
 }
 
 export default function CourseSchema({
   courseName,
   description,
-  startDate,
-  endDate,
+  courseMode = 'online',
   price,
-  instructor,
-  image = 'https://aitishkino.ru/images/course-default.jpg',
+  image,
 }: CourseSchemaProps) {
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: courseName,
-    description: description,
+    description,
     provider: {
       '@type': 'EducationalOrganization',
-      name: 'Айтишкино',
-      sameAs: 'https://aitishkino.ru',
+      name: siteConfig.name,
+      sameAs: siteConfig.url,
     },
-    image: image,
-    instructor: {
-      '@type': 'Person',
-      name: instructor,
-    },
+    image: image || `${siteConfig.url}/images/og-image.jpg`,
     hasCourseInstance: {
       '@type': 'CourseInstance',
-      startDate: startDate,
-      endDate: endDate,
-      offers: {
-        '@type': 'Offer',
-        price: price.toString(),
-        priceCurrency: 'RUB',
-      },
+      courseMode,
+      ...(price && {
+        offers: {
+          '@type': 'Offer',
+          price: price.toString(),
+          priceCurrency: 'RUB',
+        },
+      }),
     },
   };
 
   return (
-    <Script
-      id={`course-schema-${courseName.replace(/\s+/g, '-').toLowerCase()}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
     />

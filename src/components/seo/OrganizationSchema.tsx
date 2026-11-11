@@ -1,15 +1,13 @@
-'use client';
-
-import Script from 'next/script';
+import { siteConfig } from '@/config/site';
 
 export default function OrganizationSchema() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Айтишкино',
-    url: 'https://aitishkino.ru',
-    logo: 'https://aitishkino.ru/images/logo.png',
-    description: 'Онлайн-школа программирования и робототехники для детей 8-17 лет',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/images/logo/logo.png`,
+    description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'Россия',
@@ -18,16 +16,15 @@ export default function OrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      telephone: '+7 (XXX) XXX-XX-XX',
-      email: 'info@aitishkino.ru',
+      telephone: siteConfig.contacts.phone,
+      email: siteConfig.contacts.email,
       availableLanguage: ['Russian'],
     },
-    sameAs: ['https://vk.com/aitishkino', 'https://t.me/aitishkino'],
+    sameAs: [siteConfig.social.vk, siteConfig.social.telegram, siteConfig.social.youtube],
   };
 
   return (
-    <Script
-      id="organization-schema"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
     />
