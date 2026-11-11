@@ -10,3 +10,4 @@ src/assets/animations
 *.lottie
 .husky/_
 .idea
+docs/media
