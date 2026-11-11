@@ -72,7 +72,7 @@
 }
 
 .highlight {
-  color: #00B18F;
+  color: #00b18f;
   display: block;
   margin-top: 8px;
 }
@@ -104,7 +104,7 @@
     margin: 0 auto 1rem;
     max-width: 100%;
   }
-  
+
   .animation {
     max-width: 320px;
   }
@@ -114,7 +114,7 @@
   .animationContainer {
     margin: 0 auto 0.75rem;
   }
-  
+
   .animation {
     max-width: 280px;
   }
@@ -135,13 +135,13 @@
     align-items: center;
     gap: 3rem;
   }
-  
+
   .animationContainer {
     order: 2;
     width: 50%;
     margin-bottom: 0;
   }
-  
+
   .textContent {
     order: 1;
     padding-right: 3rem;
@@ -193,7 +193,7 @@
 }
 
 .button {
-  background-color: #00B18F;
+  background-color: #00b18f;
   color: white;
   font-weight: 500;
   padding: 14px 24px;

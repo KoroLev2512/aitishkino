@@ -10,7 +10,7 @@ export const ApproachSection = () => {
         <div className={styles.backgroundLeft}></div>
         <div className={styles.backgroundRight}></div>
       </div>
-      
+
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Left side - Animation */}
@@ -23,16 +23,14 @@ export const ApproachSection = () => {
               style={{ width: '100%', height: '100%' }}
             />
           </div>
-          
+
           {/* Right side - Text content */}
           <div className={styles.textContent}>
-            <h1 className={styles.title}>
-             Уникальный подход к объяснению материала
-            </h1>
+            <h1 className={styles.title}>Уникальный подход к объяснению материала</h1>
             <p className={styles.description}>
-              «Айтишкино» — это не просто курсы, а образовательная экосистема, 
-              где каждый элемент продуман для максимального вовлечения и практической пользы. 
-              Вот что делает наш подход уникальным:
+              «Айтишкино» — это не просто курсы, а образовательная экосистема, где каждый элемент
+              продуман для максимального вовлечения и практической пользы. Вот что делает наш подход
+              уникальным:
             </p>
           </div>
         </div>
@@ -40,5 +38,3 @@ export const ApproachSection = () => {
     </section>
   );
 };
-
-

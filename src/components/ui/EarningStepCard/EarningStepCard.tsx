@@ -7,11 +7,7 @@ interface EarningStepCardProps {
   description: string | React.ReactNode;
 }
 
-export const EarningStepCard: React.FC<EarningStepCardProps> = ({ 
-  number, 
-  title, 
-  description 
-}) => {
+export const EarningStepCard: React.FC<EarningStepCardProps> = ({ number, title, description }) => {
   return (
     <div className={styles.card}>
       <div className={styles.number}>{number}</div>
@@ -22,5 +18,3 @@ export const EarningStepCard: React.FC<EarningStepCardProps> = ({
     </div>
   );
 };
-
-

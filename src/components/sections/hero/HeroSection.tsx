@@ -10,7 +10,7 @@ export const HeroSection = () => {
         <div className={styles.backgroundLeft}></div>
         <div className={styles.backgroundRight}></div>
       </div>
-      
+
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Animation - Moved to top on mobile */}
@@ -23,7 +23,7 @@ export const HeroSection = () => {
               style={{ width: '100%', height: '100%' }}
             />
           </div>
-          
+
           {/* Text content */}
           <div className={styles.textContent}>
             <h1 className={styles.title}>
@@ -31,11 +31,11 @@ export const HeroSection = () => {
               <span className={styles.highlight}>с гаджетами за час!</span>
             </h1>
             <p className={styles.description}>
-              Всего за 60 минут ваш ребенок создаст свой первый работающий проект по программированию и робототехнике.
-
+              Всего за 60 минут ваш ребенок создаст свой первый работающий проект по
+              программированию и робототехнике.
             </p>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className={styles.button}
               onClick={(e) => {
                 e.preventDefault();
@@ -44,37 +44,41 @@ export const HeroSection = () => {
                   // Плавный скролл с отступом сверху
                   const yOffset = -80; // Уменьшаем отступ для лучшего позиционирования
                   const y = form.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                  
+
                   // Прокручиваем один раз с плавной анимацией
                   window.scrollTo({
                     top: y,
-                    behavior: 'smooth'
+                    behavior: 'smooth',
                   });
-                  
+
                   // Устанавливаем фокус на первое поле формы с небольшой задержкой
-                  const firstInput = form.querySelector('input, textarea, select') as HTMLInputElement | null;
+                  const firstInput = form.querySelector(
+                    'input, textarea, select'
+                  ) as HTMLInputElement | null;
                   if (firstInput) {
                     // Устанавливаем фокус после завершения скролла
                     const focusInput = () => {
                       firstInput.focus({
                         // Отключаем дополнительный скролл при фокусе
-                        preventScroll: true
+                        preventScroll: true,
                       });
                     };
-                    
+
                     // Устанавливаем таймер на случай, если событие scroll не сработает
                     const focusTimer = setTimeout(focusInput, 800);
-                    
+
                     // Отслеживаем завершение скролла
                     const onScroll = () => {
-                      if ((window.pageYOffset >= y - 10 && window.pageYOffset <= y + 10) || 
-                          (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2) {
+                      if (
+                        (window.pageYOffset >= y - 10 && window.pageYOffset <= y + 10) ||
+                        window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2
+                      ) {
                         window.removeEventListener('scroll', onScroll);
                         clearTimeout(focusTimer);
                         focusInput();
                       }
                     };
-                    
+
                     // Добавляем небольшой таймаут перед подпиской на событие скролла
                     setTimeout(() => {
                       window.addEventListener('scroll', onScroll, { once: true });

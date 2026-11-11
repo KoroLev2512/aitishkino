@@ -16,7 +16,7 @@ import AdaptiveLottie from '@/components/ui/AdaptiveLottie/AdaptiveLottie';
   desktopConfig={{ width: 800, height: 600 }}
   tabletConfig={{ width: 600, height: 450 }}
   mobileConfig={{ width: 320, height: 240, speed: 0.8 }}
-/>
+/>;
 ```
 
 #### Пропсы
@@ -41,7 +41,7 @@ import { useAdaptiveAnimation } from '@/hooks/useAdaptiveAnimation';
 const { config, isMobile } = useAdaptiveAnimation({
   desktopConfig: { width: 800, height: 600, speed: 1, loop: true, autoplay: true },
   tabletConfig: { width: 600, height: 450, speed: 0.9 },
-  mobileConfig: { width: 320, height: 240, speed: 0.8 }
+  mobileConfig: { width: 320, height: 240, speed: 0.8 },
 });
 ```
 
@@ -52,12 +52,12 @@ const { config, isMobile } = useAdaptiveAnimation({
 ```tsx
 import { useMobileOptimization } from '@/hooks/useMobileOptimization';
 
-const { 
-  isMobile, 
-  isLowEndDevice, 
+const {
+  isMobile,
+  isLowEndDevice,
   getOptimizedSettings,
   shouldReduceAnimations,
-  shouldLowerFrameRate 
+  shouldLowerFrameRate,
 } = useMobileOptimization();
 ```
 

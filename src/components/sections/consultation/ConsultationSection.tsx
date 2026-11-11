@@ -13,14 +13,19 @@ interface IFormData {
 }
 
 export const ConsultationSection = () => {
-  const { control, handleSubmit: handleFormSubmit, formState: { errors } } = useForm<IFormData>();
+  const {
+    control,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+  } = useForm<IFormData>();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data: IFormData) => {
     setIsLoading(true);
 
-    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeno1cq1rKAAuW3ZtZpr_9DFUBu_zo0LShKAWZkj4TL3rQ6eA/formResponse';
+    const googleFormUrl =
+      'https://docs.google.com/forms/d/e/1FAIpQLSeno1cq1rKAAuW3ZtZpr_9DFUBu_zo0LShKAWZkj4TL3rQ6eA/formResponse';
     const formDataToSubmit = new FormData();
     formDataToSubmit.append('entry.907660670', data.name);
     formDataToSubmit.append('entry.805562166', data.phone);
@@ -47,7 +52,13 @@ export const ConsultationSection = () => {
         <div className={styles.successContent}>
           <div className={styles.successIcon}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path
+                d="M20 6L9 17L4 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
           <h2 className={styles.successTitle}>Заявка отправлена!</h2>
@@ -62,11 +73,12 @@ export const ConsultationSection = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.pattern} aria-hidden="true" />
-          
+
           <div className={styles.header}>
             <h2 className={styles.title}>Запишитесь на консультацию</h2>
             <p className={styles.subtitle}>
-              Оставьте заявку, и наш менеджер свяжется с вами в течение 10 минут, чтобы обсудить детали обучения и ответить на все ваши вопросы
+              Оставьте заявку, и наш менеджер свяжется с вами в течение 10 минут, чтобы обсудить
+              детали обучения и ответить на все ваши вопросы
             </p>
           </div>
 
@@ -79,17 +91,14 @@ export const ConsultationSection = () => {
                   defaultValue=""
                   rules={{ required: 'Пожалуйста, введите ваше имя' }}
                   render={({ field }) => (
-                    <input
-                      {...field}
-                      type="text"
-                      className={styles.input}
-                      placeholder="Ваше имя"
-                    />
+                    <input {...field} type="text" className={styles.input} placeholder="Ваше имя" />
                   )}
                 />
-                {errors.name && <span className={styles.error}>{errors.name.message as string}</span>}
+                {errors.name && (
+                  <span className={styles.error}>{errors.name.message as string}</span>
+                )}
               </div>
-              
+
               <div className={styles.formGroup}>
                 <Controller
                   name="phone"
@@ -106,9 +115,11 @@ export const ConsultationSection = () => {
                     />
                   )}
                 />
-                {errors.phone && <span className={styles.error}>{errors.phone.message as string}</span>}
+                {errors.phone && (
+                  <span className={styles.error}>{errors.phone.message as string}</span>
+                )}
               </div>
-              
+
               <div className={styles.formGroup}>
                 <Controller
                   name="email"
@@ -118,34 +129,28 @@ export const ConsultationSection = () => {
                     required: 'Пожалуйста, введите ваш email',
                     pattern: {
                       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: 'Пожалуйста, введите корректный email'
-                    }
+                      message: 'Пожалуйста, введите корректный email',
+                    },
                   }}
                   render={({ field }) => (
-                    <input
-                      {...field}
-                      type="email"
-                      className={styles.input}
-                      placeholder="Email"
-                    />
+                    <input {...field} type="email" className={styles.input} placeholder="Email" />
                   )}
                 />
-                {errors.email && <span className={styles.error}>{errors.email.message as string}</span>}
+                {errors.email && (
+                  <span className={styles.error}>{errors.email.message as string}</span>
+                )}
               </div>
             </div>
-            
+
             <div className={styles.formFooter}>
-              <button 
-                type="submit" 
-                className={styles.submitButton}
-                disabled={isLoading}
-              >
+              <button type="submit" className={styles.submitButton} disabled={isLoading}>
                 {isLoading ? 'Отправка...' : 'Отправить заявку'}
                 {!isLoading && <Send size={18} />}
               </button>
-              
+
               <p className={styles.privacyText}>
-                Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с{' '}
+                Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь
+                с{' '}
                 <a href="/privacy" className={styles.privacyLink}>
                   политикой конфиденциальности
                 </a>
@@ -157,5 +162,3 @@ export const ConsultationSection = () => {
     </section>
   );
 };
-
-

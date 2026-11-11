@@ -62,7 +62,7 @@
 
 .contactIcon {
   margin-right: 12px;
-  color: #00B199;
+  color: #00b199;
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -124,7 +124,7 @@
 
 .socialLink:hover {
   color: #ffffff;
-  background-color: #00B199;
+  background-color: #00b199;
 }
 
 @media (max-width: 768px) {
@@ -132,11 +132,11 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .mapContainer {
     height: 250px;
   }
-  
+
   .bottomBar {
     flex-direction: column;
     text-align: center;

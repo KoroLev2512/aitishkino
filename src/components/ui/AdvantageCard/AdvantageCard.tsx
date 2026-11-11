@@ -8,23 +8,17 @@ export interface AdvantageCardProps {
   className?: string;
 }
 
-export const AdvantageCard: React.FC<AdvantageCardProps> = ({ 
-  title, 
-  description, 
+export const AdvantageCard: React.FC<AdvantageCardProps> = ({
+  title,
+  description,
   icon,
-  className = ''
+  className = '',
 }) => {
   return (
     <div className={`${styles.card} ${className}`}>
-      {icon && (
-        <div className={styles.iconContainer}>
-          {icon}
-        </div>
-      )}
+      {icon && <div className={styles.iconContainer}>{icon}</div>}
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
     </div>
   );
 };
-
-

@@ -9,7 +9,7 @@ export const KeyDirectionsSection = () => {
         <h2 className={styles.title}>
           Наши два ключевых направления идеально дополняют друг друга:
         </h2>
-        
+
         <div className={styles.directionsWrapper}>
           {/* Карточка с программированием */}
           <div className={`${styles.direction} ${styles.programming}`}>
@@ -17,9 +17,7 @@ export const KeyDirectionsSection = () => {
               <div className={`${styles.iconContainer} ${styles.programmingIcon}`}>
                 <Code2 className={styles.icon} size={36} color="#00B18F" strokeWidth={2} />
               </div>
-              <h3 className={styles.directionTitle}>
-                Программирование
-              </h3>
+              <h3 className={styles.directionTitle}>Программирование</h3>
               <p className={styles.directionText}>
                 Написание кода развивает логику, алгоритмическое мышление и цифровую грамотность.
               </p>
@@ -32,19 +30,18 @@ export const KeyDirectionsSection = () => {
               <div className={`${styles.iconContainer} ${styles.roboticsIcon}`}>
                 <Bot className={styles.icon} size={36} color="white" strokeWidth={2} />
               </div>
-              <h3 className={styles.directionTitle}>
-                Робототехника
-              </h3>
+              <h3 className={styles.directionTitle}>Робототехника</h3>
               <p className={styles.directionText}>
                 Превращает этот код в настоящие движущиеся механизмы и умные устройства.
               </p>
             </div>
           </div>
         </div>
-        
+
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            Оба направления тесно связаны и позволяют получить полное представление о современном мире технологий
+            Оба направления тесно связаны и позволяют получить полное представление о современном
+            мире технологий
           </p>
         </div>
       </div>

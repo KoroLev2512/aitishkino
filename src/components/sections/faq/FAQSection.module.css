@@ -71,11 +71,11 @@
   .faqSection {
     padding: 70px 0;
   }
-  
+
   .title {
     font-size: 38px;
   }
-  
+
   .subtitle {
     font-size: 17px;
   }
@@ -85,20 +85,20 @@
   .faqSection {
     padding: 60px 0;
   }
-  
+
   .header {
     margin-bottom: 40px;
   }
-  
+
   .title {
     font-size: 32px;
     margin-bottom: 12px;
   }
-  
+
   .subtitle {
     font-size: 16px;
   }
-  
+
   .faqSection::before,
   .faqSection::after {
     display: none;
@@ -109,15 +109,15 @@
   .faqSection {
     padding: 50px 0;
   }
-  
+
   .container {
     padding: 0 16px;
   }
-  
+
   .title {
     font-size: 28px;
   }
-  
+
   .subtitle {
     font-size: 15px;
   }

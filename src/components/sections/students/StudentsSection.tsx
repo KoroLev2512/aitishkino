@@ -10,20 +10,20 @@ const students = [
     name: 'Рома',
     age: '9',
     course: 'Робототехника',
-    imageUrl: roma
+    imageUrl: roma,
   },
   {
     name: 'Марвин',
     age: '12',
     course: 'Программирование',
-    imageUrl: marvin
+    imageUrl: marvin,
   },
   {
     name: 'Федя',
     age: '7',
     course: 'Робототехника',
-    imageUrl: fedya
-  }
+    imageUrl: fedya,
+  },
 ];
 
 export const StudentsSection: React.FC = () => {
@@ -32,7 +32,7 @@ export const StudentsSection: React.FC = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>Проекты учеников</h2>
         <p className={styles.subtitle}>Узнайте о достижениях наших студентов</p>
-        
+
         <div className={styles.gridContainer}>
           <div className={styles.grid}>
             {students.map((student, index) => (
@@ -46,8 +46,20 @@ export const StudentsSection: React.FC = () => {
             ))}
           </div>
           <div className={styles.scrollIndicator}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 10L12 14L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 10L12 14L16 10"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
             <div>Листайте вбок</div>
           </div>

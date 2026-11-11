@@ -1,6 +1,6 @@
 .advItem {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
   padding: 32px 24px;
   width: 100%;
@@ -19,7 +19,9 @@
 
 .advItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .iconContainer {
@@ -57,7 +59,7 @@
 .iconContainer svg {
   width: 24px;
   height: 24px;
-  color: #00B18F;
+  color: #00b18f;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
@@ -92,7 +94,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #00B18F;
+  background-color: #00b18f;
   transition: width 0.3s ease;
 }
 
@@ -102,7 +104,7 @@
 
 .description {
   font-size: 15px;
-  color: #4B5563;
+  color: #4b5563;
   line-height: 1.5;
   margin: 0;
   opacity: 0.9;

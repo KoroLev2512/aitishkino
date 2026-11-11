@@ -7,7 +7,18 @@
   justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 }
 
 .container {
@@ -34,7 +45,7 @@
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   z-index: 2;
-  isolation: isolate; 
+  isolation: isolate;
 }
 
 /* Стили для фона с кругами */
@@ -76,7 +87,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 1px 1px, #00b18f20 1px, transparent 0),
     radial-gradient(circle at 1px 1px, #00b18f20 1px, transparent 0);
   z-index: -1;
@@ -152,7 +163,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #00B18F 0%, #00A5B1 100%);
+  background: linear-gradient(90deg, #00b18f 0%, #00a5b1 100%);
   border-radius: 2px;
 }
 
@@ -164,7 +175,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #00B18F 0%, #00A5B1 100%);
+  background: linear-gradient(90deg, #00b18f 0%, #00a5b1 100%);
   border-radius: 4px;
 }
 
@@ -224,7 +235,7 @@
 }
 
 .privacyLink {
-  color: #00B18F;
+  color: #00b18f;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -239,26 +250,26 @@
     padding: 40px 20px;
     border-radius: 16px;
   }
-  
+
   .title {
     font-size: 28px;
   }
-  
+
   .subtitle {
     font-size: 16px;
   }
-  
+
   .input,
   .submitButton {
     height: 52px;
     font-size: 15px;
   }
-  
+
   .formVertical {
     gap: 15px;
     padding: 0 10px;
   }
-  
+
   .privacyText {
     font-size: 13px;
     text-align: center;
@@ -382,7 +393,7 @@
 
 .input:focus,
 .select:focus {
-  border-color: #00B18F;
+  border-color: #00b18f;
   box-shadow: 0 0 0 3px rgba(0, 177, 143, 0.1);
   outline: none;
 }
@@ -407,7 +418,7 @@
   cursor: pointer;
 }
 
-.select option[value=""] {
+.select option[value=''] {
   color: #94a3b8;
 }
 
@@ -419,7 +430,7 @@
 
 /* Кнопка отправки */
 .submitButton {
-  background: #00B18F;
+  background: #00b18f;
   color: white;
   border: none;
   border-radius: 10px;
@@ -546,7 +557,7 @@
 }
 
 .privacyLink {
-  color: #00B18F;
+  color: #00b18f;
   text-decoration: none;
   transition: all 0.2s ease;
   font-weight: 500;
@@ -561,7 +572,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #00B18F;
+  background-color: #00b18f;
   transition: width 0.3s ease;
 }
 
@@ -602,7 +613,7 @@
 .successIcon {
   width: 100px;
   height: 100px;
-  background: #00B18F;
+  background: #00b18f;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -621,7 +632,7 @@
 .successTitle {
   font-size: 24px;
   font-weight: 700;
-  color: #1E293B;
+  color: #1e293b;
   margin-bottom: 12px;
   line-height: 1.3;
 }
@@ -657,7 +668,7 @@
 /* Подзаголовок */
 .subtitle {
   font-size: 14px;
-  color: #64748B;
+  color: #64748b;
   line-height: 1.5;
   max-width: 100%;
   margin: 0 auto;
@@ -723,34 +734,34 @@
     padding: 40px 0;
     min-height: auto;
   }
-  
+
   .container {
     margin: 20px;
     padding: 30px 20px;
     width: auto;
   }
-  
+
   .title {
     font-size: 28px;
     margin-bottom: 16px;
   }
-  
+
   .subtitle {
     font-size: 16px;
     margin-bottom: 24px;
   }
-  
+
   .form {
     padding: 16px;
     gap: 16px;
   }
-  
+
   .input,
   .button {
     height: 48px;
     font-size: 15px;
   }
-  
+
   .button {
     margin-top: 8px;
   }
@@ -760,19 +771,19 @@
   .section {
     padding: 60px 0;
   }
-  
+
   .content {
     padding: 40px 24px;
   }
-  
+
   .title {
     font-size: 24px;
   }
-  
+
   .subtitle {
     font-size: 15px;
   }
-  
+
   .section::before,
   .section::after {
     display: none;
@@ -784,15 +795,15 @@
     padding: 32px 20px;
     border-radius: 16px;
   }
-  
+
   .title {
     font-size: 22px;
   }
-  
+
   .input {
     padding: 14px 16px;
   }
-  
+
   .submitButton {
     padding: 14px;
   }

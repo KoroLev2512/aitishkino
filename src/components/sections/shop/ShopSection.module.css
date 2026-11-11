@@ -1,5 +1,5 @@
 .shopSection {
-  background: linear-gradient(135deg, #00B18F 0%, #008B74 100%);
+  background: linear-gradient(135deg, #00b18f 0%, #008b74 100%);
   padding: 80px 0;
   overflow: hidden;
   position: relative;
@@ -51,7 +51,9 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   color: #1a1a1a;
@@ -108,7 +110,7 @@
 .points {
   font-size: 18px;
   font-weight: 700;
-  color: #00B18F;
+  color: #00b18f;
   margin-top: auto;
 }
 
@@ -132,11 +134,11 @@
   .productCard {
     flex: 0 0 240px;
   }
-  
+
   .title {
     font-size: 36px;
   }
-  
+
   .description {
     font-size: 16px;
     padding: 0 20px;
@@ -147,25 +149,25 @@
   .shopSection {
     padding: 60px 0;
   }
-  
+
   .productsContainer {
     gap: 16px;
   }
-  
+
   .productCard {
     flex: 0 0 200px;
   }
-  
+
   .title {
     font-size: 32px;
     margin-bottom: 16px;
   }
-  
+
   .description {
     font-size: 15px;
     margin-bottom: 32px;
   }
-  
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -180,28 +182,28 @@
   .shopSection {
     padding: 48px 0;
   }
-  
+
   .title {
     font-size: 28px;
   }
-  
+
   .description {
     font-size: 14px;
     margin-bottom: 24px;
   }
-  
+
   .productCard {
     flex: 0 0 180px;
   }
-  
+
   .productName {
     font-size: 14px;
   }
-  
+
   .points {
     font-size: 16px;
   }
-  
+
   @keyframes scroll {
     0% {
       transform: translateX(0);

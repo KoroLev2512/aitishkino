@@ -33,7 +33,7 @@
   .title {
     font-size: 30px;
   }
-  
+
   .description {
     font-size: 16px;
   }
@@ -44,7 +44,7 @@
   .title {
     font-size: 32px;
   }
-  
+
   .description {
     font-size: 17px;
   }
@@ -55,7 +55,7 @@
   .title {
     font-size: 36px;
   }
-  
+
   .description {
     font-size: 18px;
   }
@@ -66,7 +66,7 @@
   .section {
     padding: 60px 0;
   }
-  
+
   .content {
     max-width: 720px;
     margin: 0 auto;
@@ -75,23 +75,23 @@
     align-items: center;
     gap: 40px;
   }
-  
+
   .animationContainer {
     flex: 1;
     order: 2;
   }
-  
+
   .textContent {
     flex: 1;
     order: 1;
     text-align: left;
   }
-  
+
   .title {
     font-size: 40px;
     margin-bottom: 24px;
   }
-  
+
   .description {
     font-size: 18px;
     margin-bottom: 28px;
@@ -106,16 +106,16 @@
     display: flex;
     align-items: center;
   }
-  
+
   .content {
     max-width: 1200px;
     gap: 60px;
   }
-  
+
   .title {
     font-size: 48px;
   }
-  
+
   .description {
     font-size: 20px;
     margin-bottom: 32px;
@@ -127,7 +127,7 @@
   .title {
     font-size: 52px;
   }
-  
+
   .description {
     font-size: 21px;
   }
@@ -138,15 +138,15 @@
   .section {
     padding: 100px 0;
   }
-  
+
   .content {
     max-width: 1280px;
   }
-  
+
   .title {
     font-size: 56px;
   }
-  
+
   .description {
     font-size: 22px;
   }
@@ -258,7 +258,7 @@
   .container {
     padding: 0 40px;
   }
-  
+
   .content {
     flex-direction: row;
     align-items: center;
@@ -372,7 +372,7 @@
   .animationContainer {
     padding: 2rem;
   }
-  
+
   .animationPlaceholder {
     min-height: 350px;
   }
@@ -384,7 +384,7 @@
     flex: 1;
     padding: 2rem;
   }
-  
+
   .animationPlaceholder {
     min-height: 400px;
   }
@@ -474,7 +474,7 @@
 }
 
 .highlight {
-  color: #00B18F;
+  color: #00b18f;
   position: relative;
   display: inline-block;
 }
@@ -504,16 +504,16 @@
     flex-direction: column;
     text-align: center;
   }
-  
+
   .animationContainer {
     margin-bottom: 3rem;
   }
-  
+
   .textContent {
     max-width: 100%;
     text-align: center;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
@@ -523,15 +523,15 @@
   .container {
     padding: 0 20px;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .description {
     font-size: 1rem;
   }
-  
+
   .animationPlaceholder {
     min-height: 300px;
   }
@@ -562,14 +562,14 @@
 /* Fix animation overlap on mobile devices */
 @media (max-width: 767px) {
   .animationContainer {
-    margin-top: 20px; 
-    margin-bottom: 30px; 
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .animationContainer {
-    margin-top: 15px; 
-    margin-bottom: 20px; 
+    margin-top: 15px;
+    margin-bottom: 20px;
   }
 }

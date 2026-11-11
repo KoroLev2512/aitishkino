@@ -9,12 +9,7 @@ interface StudentCardProps {
   imageUrl: StaticImageData;
 }
 
-export const StudentCard: React.FC<StudentCardProps> = ({
-  name,
-  age,
-  course,
-  imageUrl,
-}) => {
+export const StudentCard: React.FC<StudentCardProps> = ({ name, age, course, imageUrl }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>

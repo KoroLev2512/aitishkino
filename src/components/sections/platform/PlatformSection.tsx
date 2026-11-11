@@ -10,31 +10,32 @@ export const PlatformSection = () => {
     {
       id: 'repeat',
       title: 'Повторяйте',
-      description: 'Методические материалы и домашние задания по пройденным темам для закрепления знаний',
+      description:
+        'Методические материалы и домашние задания по пройденным темам для закрепления знаний',
       icon: 'repeat',
-      iconColor: 'text-blue-500'
+      iconColor: 'text-blue-500',
     },
     {
       id: 'feedback',
       title: 'Обратная связь',
       description: 'Персональные комментарии преподавателей к каждой работе',
       icon: 'message-circle',
-      iconColor: 'text-green-500'
+      iconColor: 'text-green-500',
     },
     {
       id: 'schedule',
       title: 'Расписание',
       description: 'Ближайшие занятия и школьные мероприятия',
       icon: 'calendar',
-      iconColor: 'text-purple-500'
+      iconColor: 'text-purple-500',
     },
     {
       id: 'progress',
       title: 'Прогресс',
       description: 'Наглядная статистика по пройденным модулям',
       icon: 'bar-chart-2',
-      iconColor: 'text-orange-500'
-    }
+      iconColor: 'text-orange-500',
+    },
   ];
 
   return (
@@ -43,12 +44,9 @@ export const PlatformSection = () => {
         <div className={styles.content}>
           <div className={styles.leftColumn}>
             <div className={styles.textContent}>
-              <h2 className={styles.title}>
-                Образовательная платформа
-              </h2>
+              <h2 className={styles.title}>Образовательная платформа</h2>
               <p className={styles.subtitle}>
-                Платформа Айтишкино — это интерактивная образовательная
-                среда, где всё под рукой:
+                Платформа Айтишкино — это интерактивная образовательная среда, где всё под рукой:
               </p>
               <div className={styles.animationContainer}>
                 <Lottie
@@ -69,7 +67,12 @@ export const PlatformSection = () => {
                   <AdvItem
                     text={feature.title}
                     text1={feature.description}
-                    icon={<AdvantageIcon type={feature.icon} className={`w-6 h-6 ${feature.iconColor}`} />}
+                    icon={
+                      <AdvantageIcon
+                        type={feature.icon}
+                        className={`w-6 h-6 ${feature.iconColor}`}
+                      />
+                    }
                     iconColor={feature.iconColor}
                   />
                 </div>
@@ -81,5 +84,3 @@ export const PlatformSection = () => {
     </section>
   );
 };
-
-

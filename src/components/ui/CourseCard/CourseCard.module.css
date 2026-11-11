@@ -1,12 +1,14 @@
 .courseCard {
   width: 100%;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   min-height: 314px;
   height: auto;
@@ -37,7 +39,7 @@
   text-align: center;
   position: relative;
   z-index: 2;
-  background: #FFFFFF;
+  background: #ffffff;
   min-height: 314px;
   box-sizing: border-box;
 }
@@ -68,7 +70,7 @@
 
 .courseInfo {
   font-size: 16px;
-  color: #4B5563;
+  color: #4b5563;
   margin-bottom: 8px;
   line-height: 1.5;
 }
@@ -77,9 +79,9 @@
   width: calc(100% - 40px);
   height: 44px;
   margin-top: 20px;
-  background: #FFFFFF;
-  border: 2px solid #00B18F;
-  color: #00B18F;
+  background: #ffffff;
+  border: 2px solid #00b18f;
+  color: #00b18f;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 500;
@@ -91,8 +93,8 @@
 }
 
 .detailsButton:hover {
-  background-color: #00B18F;
-  color: #FFFFFF;
+  background-color: #00b18f;
+  color: #ffffff;
 }
 
 /* Expanded content styles */
@@ -101,7 +103,7 @@
   opacity: 0;
   overflow: hidden;
   padding: 0 30px;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   border-top: 1px solid transparent;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
@@ -118,7 +120,7 @@
   max-height: 1000px;
   opacity: 1;
   padding: 30px;
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid #e5e7eb;
   margin-top: 20px;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-property: max-height, opacity, padding, margin, border-top;
@@ -127,21 +129,23 @@
 
 .modulesHeader {
   background-color: rgba(0, 177, 143, 0.1);
-  color: #00B18F;
+  color: #00b18f;
   font-weight: 600;
   padding: 12px 16px;
   margin: 0 -30px 16px;
   font-size: 18px;
 }
 
-.modulesList, .outcomesList {
+.modulesList,
+.outcomesList {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s, 
-              transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s;
+  transition:
+    opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s,
+    transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s;
   will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -151,15 +155,16 @@
 .courseCard.expanded .outcomesList {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s, 
-              transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
+  transition:
+    opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s,
+    transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
   will-change: opacity, transform;
   -webkit-backface-visibility: hidden;
 }
 
 .moduleItem {
   padding: 8px 0;
-  color: #4B5563;
+  color: #4b5563;
   font-size: 16px;
   line-height: 1.5;
   position: relative;
@@ -169,7 +174,7 @@
 
 .moduleItem::before {
   content: '•';
-  color: #00B18F;
+  color: #00b18f;
   font-weight: bold;
   display: inline-block;
   width: 20px;
@@ -177,8 +182,8 @@
 }
 
 .outcomesHeader {
-  background-color: #00B18F;
-  color: #FFFFFF;
+  background-color: #00b18f;
+  color: #ffffff;
   font-weight: 600;
   padding: 12px 16px;
   margin: 0 -30px 16px;
@@ -193,7 +198,7 @@
 
 .outcomeItem {
   padding: 8px 0;
-  color: #4B5563;
+  color: #4b5563;
   font-size: 16px;
   line-height: 1.5;
   position: relative;
@@ -203,7 +208,7 @@
 
 .outcomeItem::before {
   content: '✓';
-  color: #00B18F;
+  color: #00b18f;
   font-weight: bold;
   display: inline-block;
   width: 20px;

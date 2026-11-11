@@ -10,9 +10,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
     <div className={styles.pageContainer}>
       <Header />
-      <main className={styles.mainContent}>
-        {children}
-      </main>
+      <main className={styles.mainContent}>{children}</main>
     </div>
   );
-}
+};

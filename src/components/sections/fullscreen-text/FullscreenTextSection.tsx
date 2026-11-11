@@ -15,21 +15,14 @@ export const FullscreenTextSection: React.FC<FullscreenTextSectionProps> = ({
   textColor = '#000000',
 }) => {
   return (
-    <section 
-      className={styles.section}
-      style={{ backgroundColor, color: textColor }}
-    >
+    <section className={styles.section} style={{ backgroundColor, color: textColor }}>
       <div className={styles.container}>
         <h2 className={styles.title}>
           {line1}
           <br />
-          <span className={styles.highlight}>
-            {line2}
-          </span>
+          <span className={styles.highlight}>{line2}</span>
         </h2>
       </div>
     </section>
   );
 };
-
-

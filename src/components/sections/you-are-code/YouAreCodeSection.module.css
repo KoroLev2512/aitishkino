@@ -53,7 +53,7 @@
     margin: 0 auto 1.5rem;
     max-width: 100%;
   }
-  
+
   .animation {
     max-width: 320px;
   }
@@ -63,7 +63,7 @@
   .animationContainer {
     margin: 0 auto 1rem;
   }
-  
+
   .animation {
     max-width: 280px;
   }
@@ -84,13 +84,13 @@
     align-items: center;
     gap: 3rem;
   }
-  
+
   .animationContainer {
     order: 2;
     width: 50%;
     margin-bottom: 0;
   }
-  
+
   .textContent {
     order: 1;
     padding-right: 3rem;
@@ -115,7 +115,7 @@
 }
 
 .highlight {
-  color: #00B18F;
+  color: #00b18f;
   display: block;
   margin-top: 8px;
 }

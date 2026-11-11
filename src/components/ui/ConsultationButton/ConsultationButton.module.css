@@ -7,7 +7,7 @@
 }
 
 .consultationButton {
-  background-color: #00B18F;
+  background-color: #00b18f;
   color: white;
   font-weight: 500;
   padding: 16px 32px;
@@ -59,7 +59,7 @@
     padding: 0 24px;
     margin-top: 40px;
   }
-  
+
   .consultationButton {
     height: 64px;
     font-size: 17px;
@@ -72,13 +72,13 @@
     padding: 0 16px;
     margin-top: 32px;
   }
-  
+
   .consultationButton {
     height: 56px;
     font-size: 16px;
     padding: 12px 20px;
   }
-  
+
   .arrowIcon {
     width: 18px;
     height: 18px;

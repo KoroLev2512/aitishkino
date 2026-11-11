@@ -19,33 +19,33 @@ export default function CourseSchema({
   endDate,
   price,
   instructor,
-  image = 'https://aitishkino.ru/images/course-default.jpg'
+  image = 'https://aitishkino.ru/images/course-default.jpg',
 }: CourseSchemaProps) {
   const courseSchema = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": courseName,
-    "description": description,
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Айтишкино",
-      "sameAs": "https://aitishkino.ru"
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: courseName,
+    description: description,
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'Айтишкино',
+      sameAs: 'https://aitishkino.ru',
     },
-    "image": image,
-    "instructor": {
-      "@type": "Person",
-      "name": instructor
+    image: image,
+    instructor: {
+      '@type': 'Person',
+      name: instructor,
     },
-    "hasCourseInstance": {
-      "@type": "CourseInstance",
-      "startDate": startDate,
-      "endDate": endDate,
-      "offers": {
-        "@type": "Offer",
-        "price": price.toString(),
-        "priceCurrency": "RUB"
-      }
-    }
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      startDate: startDate,
+      endDate: endDate,
+      offers: {
+        '@type': 'Offer',
+        price: price.toString(),
+        priceCurrency: 'RUB',
+      },
+    },
   };
 
   return (

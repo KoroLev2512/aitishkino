@@ -49,13 +49,13 @@
 
 /* Карточка программирования */
 .programming {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
 }
 
 /* Карточка робототехники */
 .robotics {
-  background: #00B18F;
+  background: #00b18f;
   color: white;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .programmingIcon .icon {
-  color: #00B18F;
+  color: #00b18f;
 }
 
 .roboticsIcon .icon {
@@ -94,7 +94,7 @@
 }
 
 .icon path {
-  stroke: #00B18F;
+  stroke: #00b18f;
 }
 
 .robotics .icon path {
@@ -123,7 +123,7 @@
 .directionText {
   font-size: 16px;
   line-height: 1.6;
-  color: #4B5563;
+  color: #4b5563;
   margin: 0;
   max-width: 90%;
 }
@@ -131,7 +131,7 @@
 .footer {
   text-align: center;
   margin-top: 40px;
-  color: #6B7280;
+  color: #6b7280;
   font-size: 16px;
   max-width: 800px;
   margin-left: auto;
@@ -144,20 +144,20 @@
   .section {
     padding: 80px 0;
   }
-  
+
   .title {
     font-size: 32px;
     margin-bottom: 50px;
   }
-  
+
   .direction {
     padding: 40px;
   }
-  
+
   .directionTitle {
     font-size: 28px;
   }
-  
+
   .directionText {
     font-size: 17px;
   }
@@ -168,22 +168,22 @@
     flex-direction: row;
     gap: 30px;
   }
-  
+
   .direction {
     flex: 1;
     min-height: 400px;
     justify-content: center;
   }
-  
+
   .title {
     font-size: 36px;
     max-width: 800px;
   }
-  
+
   .directionTitle {
     font-size: 32px;
   }
-  
+
   .directionText {
     font-size: 18px;
   }
@@ -193,7 +193,7 @@
   .direction {
     padding: 60px;
   }
-  
+
   .directionTitle {
     font-size: 36px;
     margin-bottom: 16px;

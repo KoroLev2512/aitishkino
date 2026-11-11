@@ -11,7 +11,7 @@ export default function PythonCoursePage() {
     <>
       <h1>Курс по Python для начинающих</h1>
       <p>Изучите основы программирования с нуля на языке Python</p>
-      
+
       {/* Микроразметка курса */}
       <CourseSchema
         courseName="Основы программирования на Python"
@@ -21,13 +21,13 @@ export default function PythonCoursePage() {
         price={15000}
         instructor="Иван Иванов"
       />
-      
+
       {/* Хлебные крошки */}
       <BreadcrumbSchema
         items={[
           { name: 'Главная', item: 'https://aitishkino.ru' },
           { name: 'Курсы', item: 'https://aitishkino.ru/courses' },
-          { name: 'Python для начинающих', item: 'https://aitishkino.ru/courses/python' }
+          { name: 'Python для начинающих', item: 'https://aitishkino.ru/courses/python' },
         ]}
       />
     </>

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Base styles for proper mobile rendering */
 :root {
@@ -91,7 +91,20 @@ body {
 }
 
 /* Apply SF Pro to all text elements */
-h1, h2, h3, h4, h5, h6,
-p, span, div, a, button, input, textarea, select, label {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+textarea,
+select,
+label {
   font-family: var(--font-sf-pro);
 }

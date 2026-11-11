@@ -8,12 +8,7 @@ interface FAQItemProps {
   onClick: () => void;
 }
 
-export const FAQItem: React.FC<FAQItemProps> = ({
-  question,
-  answer,
-  isOpen,
-  onClick,
-}) => {
+export const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
@@ -25,19 +20,17 @@ export const FAQItem: React.FC<FAQItemProps> = ({
 
   return (
     <div className={`${styles.faqItem} ${isOpen ? styles.isOpen : ''}`}>
-      <button
-        className={styles.questionButton}
-        onClick={onClick}
-        aria-expanded={isOpen}
-      >
+      <button className={styles.questionButton} onClick={onClick} aria-expanded={isOpen}>
         <span className={styles.questionText}>{question}</span>
         <span className={styles.icon} aria-hidden="true">
           <div className={`${styles.iconLine} ${styles.horizontal}`} />
-          <div className={`${styles.iconLine} ${styles.vertical} ${isOpen ? styles.rotated : ''}`} />
+          <div
+            className={`${styles.iconLine} ${styles.vertical} ${isOpen ? styles.rotated : ''}`}
+          />
         </span>
       </button>
-      
-      <div 
+
+      <div
         ref={contentRef}
         className={styles.answer}
         style={{ height: `${height}px` }}
@@ -54,5 +47,3 @@ export const FAQItem: React.FC<FAQItemProps> = ({
     </div>
   );
 };
-
-
