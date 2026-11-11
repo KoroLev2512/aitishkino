@@ -10,11 +10,16 @@ export const leadSchema = z.object({
     .string()
     .trim()
     .regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Пожалуйста, введите полный номер телефона'),
-  email: z.string().trim().email('Пожалуйста, введите корректный адрес электронной почты'),
+  email: z
+    .string()
+    .trim()
+    .email('Пожалуйста, введите корректный адрес электронной почты')
+    .or(z.literal(''))
+    .optional(),
   consent: z.literal(true, {
     message: 'Необходимо подтвердить согласие на обработку персональных данных',
   }),
-  honeypot: z.string().optional(),
+  honeypot: z.string().max(0, 'Spam detected').optional(),
 });
 
 export type LeadFormData = z.infer<typeof leadSchema>;

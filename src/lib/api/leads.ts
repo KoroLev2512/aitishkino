@@ -31,7 +31,7 @@ export async function submitLead(data: LeadFormData): Promise<SubmitLeadResult> 
   const formData = new FormData();
   formData.append(nameEntry, data.name);
   formData.append(phoneEntry, data.phone);
-  formData.append(emailEntry, data.email);
+  formData.append(emailEntry, data.email || '');
 
   try {
     await fetch(formUrl, {
