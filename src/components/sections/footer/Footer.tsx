@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Youtube } from 'lucide-react';
 import styles from './Footer.module.css';
+import { siteConfig } from '@/config/site';
 
 export const Footer = () => {
   return (
@@ -12,40 +13,39 @@ export const Footer = () => {
             <div className={styles.logo}>
               <Image
                 src="/images/logo/logo.png"
-                alt="Айтишкино"
+                alt={siteConfig.name}
                 width={180}
                 height={40}
                 className={styles.logoImage}
                 style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
-            <p className={styles.description}>
-              Современная IT-школа для детей и подростков, где каждый может раскрыть свой потенциал
-              в мире технологий.
-            </p>
+            <p className={styles.description}>{siteConfig.description}</p>
           </div>
 
           {/* Contact Info */}
           <div className={styles.contactColumn}>
-            <h3>Контакты</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Контакты</h3>
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <Phone className={styles.contactIcon} size={20} />
-                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                <a href={`tel:${siteConfig.contacts.phoneRaw}`}>{siteConfig.contacts.phone}</a>
               </li>
               <li className={styles.contactItem}>
                 <Mail className={styles.contactIcon} size={20} />
-                <a href="mailto:info@itishkino.ru">info@itishkino.ru</a>
+                <a href={`mailto:${siteConfig.contacts.email}`}>{siteConfig.contacts.email}</a>
               </li>
               <li className={styles.contactItem}>
                 <MapPin className={styles.contactIcon} size={20} />
-                г. Москва, ул. Примерная, д. 123, офис 45
+                <span>{siteConfig.contacts.address}</span>
               </li>
               <li className={styles.contactItem}>
                 <Clock className={styles.contactIcon} size={20} />
-                Пн-Пт: 10:00 - 20:00
-                <br />
-                Сб-Вс: 10:00 - 18:00
+                <span>
+                  {siteConfig.contacts.hoursWeekday}
+                  <br />
+                  {siteConfig.contacts.hoursWeekend}
+                </span>
               </li>
             </ul>
           </div>
@@ -71,30 +71,33 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} Айтишкино. Все права защищены.
+            © {new Date().getFullYear()} {siteConfig.name}. Все права защищены.
           </div>
           <div className={styles.socialLinks}>
             <a
-              href="https://vk.com"
+              href={siteConfig.social.vk}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
+              aria-label="Мы ВКонтакте"
             >
               <MessageSquare size={20} />
             </a>
             <a
-              href="https://t.me"
+              href={siteConfig.social.telegram}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
+              aria-label="Наш Telegram канал"
             >
               <Send size={20} />
             </a>
             <a
-              href="https://youtube.com"
+              href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
+              aria-label="Наш YouTube канал"
             >
               <Youtube size={20} />
             </a>

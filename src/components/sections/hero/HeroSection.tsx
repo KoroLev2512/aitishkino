@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Lottie from 'lottie-react';
 import heroAnimation from '@/assets/animations/Hero.json';
 import styles from './HeroSection.module.css';
@@ -34,8 +35,8 @@ export const HeroSection = () => {
               Всего за 60 минут ваш ребенок создаст свой первый работающий проект по
               программированию и робототехнике.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/#application-form"
               className={styles.button}
               onClick={(e) => {
                 e.preventDefault();
@@ -88,7 +89,7 @@ export const HeroSection = () => {
               }}
             >
               Записаться на бесплатный урок
-            </a>
+            </Link>
           </div>
         </div>
       </div>

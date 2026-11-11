@@ -26,7 +26,7 @@ export const ApproachSection = () => {
 
           {/* Right side - Text content */}
           <div className={styles.textContent}>
-            <h1 className={styles.title}>Уникальный подход к объяснению материала</h1>
+            <h2 className={styles.title}>Уникальный подход к объяснению материала</h2>
             <p className={styles.description}>
               «Айтишкино» — это не просто курсы, а образовательная экосистема, где каждый элемент
               продуман для максимального вовлечения и практической пользы. Вот что делает наш подход

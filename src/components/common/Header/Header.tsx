@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/../public/images/logo/logo.png';
 import styles from './Header.module.css';
+import { siteConfig } from '@/config/site';
 
 const navigation = [
-  { name: 'Курсы', href: '#courses' },
-  { name: 'Почему выбирают нас?', href: '#why-us' },
-  { name: 'Проекты учеников', href: '#projects' },
-  { name: 'Контакты', href: '#contacts' },
+  { name: 'Курсы', href: '/#courses' },
+  { name: 'Почему выбирают нас?', href: '/#why-us' },
+  { name: 'Проекты учеников', href: '/#projects' },
+  { name: 'Контакты', href: '/#contacts' },
 ];
 
 export const Header = () => {
@@ -18,12 +18,6 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
-
-  const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!window.confirm('Позвонить по номеру +7 (988) 231 32 xx?')) {
-      e.preventDefault();
-    }
-  };
 
   const handleRecordClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -62,6 +56,8 @@ export const Header = () => {
           window.addEventListener('scroll', onScroll, { once: true });
         }, 100);
       }
+    } else {
+      window.location.href = '/#application-form';
     }
   };
 
@@ -83,7 +79,14 @@ export const Header = () => {
         <nav className={styles.nav}>
           {/* Логотип */}
           <Link href="/" className={styles.logo} onClick={closeMenu}>
-            <Image src={logo} alt="Айтишкино" priority className={styles.logoImage} />
+            <Image
+              src="/images/logo/logo.png"
+              alt={siteConfig.name}
+              width={160}
+              height={36}
+              priority
+              className={styles.logoImage}
+            />
           </Link>
 
           {/* Навигация для десктопа */}
@@ -94,8 +97,8 @@ export const Header = () => {
               </Link>
             ))}
 
-            <a href="tel:+798823132xx" className={styles.phoneLink} onClick={handlePhoneClick}>
-              +7 (988) 231 32 xx
+            <a href={`tel:${siteConfig.contacts.phoneRaw}`} className={styles.phoneLink}>
+              {siteConfig.contacts.phone}
             </a>
           </div>
 
@@ -110,7 +113,9 @@ export const Header = () => {
             >
               Запись
             </button>
-            <button className={styles.loginButton}>Войти</button>
+            <button className={styles.loginButton} type="button">
+              Войти
+            </button>
           </div>
 
           {/* Кнопка мобильного меню */}
@@ -143,15 +148,8 @@ export const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a
-              href="tel:+798823132xx"
-              className={styles.mobilePhoneLink}
-              onClick={(e) => {
-                closeMenu();
-                handlePhoneClick(e);
-              }}
-            >
-              +7 (988) 231 32 xx
+            <a href={`tel:${siteConfig.contacts.phoneRaw}`} className={styles.mobilePhoneLink}>
+              {siteConfig.contacts.phone}
             </a>
             <div className={styles.mobileButtons}>
               <button
@@ -163,7 +161,9 @@ export const Header = () => {
               >
                 Запись
               </button>
-              <button className={styles.mobileLoginButton}>Войти</button>
+              <button className={styles.mobileLoginButton} type="button">
+                Войти
+              </button>
             </div>
           </div>
         </div>
