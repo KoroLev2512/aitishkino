@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './YouAreCodeSection.module.css';
-import Lottie from 'lottie-react';
-import secondblockAnimation from '@/assets/animations/secondblock.json';
+import { LazyLottie } from '@/components/ui/LazyLottie/LazyLottie';
 
 export const YouAreCodeSection = () => {
   return (
@@ -10,10 +9,8 @@ export const YouAreCodeSection = () => {
         <div className={styles.content}>
           {/* Animation - Moved to top on mobile */}
           <div className={styles.animationContainer}>
-            <Lottie
-              animationData={secondblockAnimation}
-              loop={true}
-              autoplay={true}
+            <LazyLottie
+              animationPath="/animations/secondblock.json"
               className={styles.animation}
               style={{ width: '100%', height: '100%' }}
             />

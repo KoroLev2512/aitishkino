@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './EarningSection.module.css';
 import { EarningStepCard } from '@/components/ui/EarningStepCard/EarningStepCard';
-import Lottie from 'lottie-react';
-import earningAnimation from '@/assets/animations/EarningSection.json';
+import { LazyLottie } from '@/components/ui/LazyLottie/LazyLottie';
 
 export const EarningSection = () => {
   return (
@@ -11,10 +10,8 @@ export const EarningSection = () => {
         <h2 className={styles.title}>Зарабатывай знаниями!</h2>
 
         <div className={styles.animationContainer}>
-          <Lottie
-            animationData={earningAnimation}
-            loop={true}
-            autoplay={true}
+          <LazyLottie
+            animationPath="/animations/EarningSection.json"
             className={styles.animation}
             style={{ width: '100%', height: '100%' }}
           />

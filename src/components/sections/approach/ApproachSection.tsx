@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ApproachSection.module.css';
-import Lottie from 'lottie-react';
-import approachAnimation from '@/assets/animations/AdvantagesSection.json';
+import { LazyLottie } from '@/components/ui/LazyLottie/LazyLottie';
 
 export const ApproachSection = () => {
   return (
@@ -15,10 +14,8 @@ export const ApproachSection = () => {
         <div className={styles.content}>
           {/* Left side - Animation */}
           <div className={styles.animationContainer}>
-            <Lottie
-              animationData={approachAnimation}
-              loop={true}
-              autoplay={true}
+            <LazyLottie
+              animationPath="/animations/AdvantagesSection.json"
               className={styles.animation}
               style={{ width: '100%', height: '100%' }}
             />

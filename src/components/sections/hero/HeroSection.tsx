@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Lottie from 'lottie-react';
-import heroAnimation from '@/assets/animations/Hero.json';
+import { LazyLottie } from '@/components/ui/LazyLottie/LazyLottie';
 import styles from './HeroSection.module.css';
 
 export const HeroSection = () => {
@@ -16,10 +15,10 @@ export const HeroSection = () => {
         <div className={styles.content}>
           {/* Animation - Moved to top on mobile */}
           <div className={styles.animationContainer}>
-            <Lottie
-              animationData={heroAnimation}
-              loop={true}
-              autoplay={true}
+            <LazyLottie
+              animationPath="/animations/Hero.json"
+              poster="/images/hero-poster.webp"
+              priority={true}
               className={styles.animation}
               style={{ width: '100%', height: '100%' }}
             />

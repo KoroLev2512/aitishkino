@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './PlatformSection.module.css';
 import { AdvItem } from '@/components/ui/AdvItem/AdvItem';
 import { AdvantageIcon } from '@/components/ui/AdvantageIcons';
-import Lottie from 'lottie-react';
-import platformAnimation from '@/assets/animations/PlatformSection.json';
+import { LazyLottie } from '@/components/ui/LazyLottie/LazyLottie';
 import { PLATFORM_FEATURES } from '@/content/platform';
 
 export const PlatformSection = () => {
@@ -18,10 +17,8 @@ export const PlatformSection = () => {
                 Платформа Айтишкино — это интерактивная образовательная среда, где всё под рукой:
               </p>
               <div className={styles.animationContainer}>
-                <Lottie
-                  animationData={platformAnimation}
-                  loop={true}
-                  autoplay={true}
+                <LazyLottie
+                  animationPath="/animations/PlatformSection.json"
                   className={styles.animation}
                   style={{ width: '100%', height: '100%' }}
                 />
