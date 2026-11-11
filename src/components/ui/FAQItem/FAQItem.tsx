@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import styles from './FAQItem.module.css';
 
 interface FAQItemProps {
@@ -11,6 +11,9 @@ interface FAQItemProps {
 export const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const id = useId();
+  const buttonId = `faq-btn-${id}`;
+  const panelId = `faq-panel-${id}`;
 
   useEffect(() => {
     if (contentRef.current) {
@@ -20,17 +23,27 @@ export const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onCl
 
   return (
     <div className={`${styles.faqItem} ${isOpen ? styles.isOpen : ''}`}>
-      <button className={styles.questionButton} onClick={onClick} aria-expanded={isOpen}>
+      <button
+        id={buttonId}
+        type="button"
+        className={styles.questionButton}
+        onClick={onClick}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+      >
         <span className={styles.questionText}>{question}</span>
         <span className={styles.icon} aria-hidden="true">
-          <div className={`${styles.iconLine} ${styles.horizontal}`} />
-          <div
+          <span className={`${styles.iconLine} ${styles.horizontal}`} />
+          <span
             className={`${styles.iconLine} ${styles.vertical} ${isOpen ? styles.rotated : ''}`}
           />
         </span>
       </button>
 
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
         ref={contentRef}
         className={styles.answer}
         style={{ height: `${height}px` }}

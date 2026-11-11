@@ -73,6 +73,17 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
@@ -120,10 +131,12 @@ export const Header = () => {
 
           {/* Кнопка мобильного меню */}
           <button
+            type="button"
             className={styles.menuButton}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <span className={`${styles.menuIcon} ${isMenuOpen ? styles.menuIconOpen : ''}`}>
               <span></span>
@@ -136,7 +149,7 @@ export const Header = () => {
 
       {/* Мобильное меню */}
       {isMenuOpen && (
-        <div className={styles.mobileMenu}>
+        <div id="mobile-menu" className={styles.mobileMenu}>
           <div className={styles.mobileMenuContent}>
             {navigation.map((item) => (
               <Link

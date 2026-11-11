@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Youtube } from 'lucide-react';
 import styles from './Footer.module.css';
 import { siteConfig } from '@/config/site';
@@ -71,7 +72,13 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} {siteConfig.name}. Все права защищены.
+            <span>
+              © {new Date().getFullYear()} {siteConfig.name}. Все права защищены.
+            </span>
+            <span className="mx-2">•</span>
+            <Link href="/privacy" className="hover:text-white underline transition-colors">
+              Политика конфиденциальности
+            </Link>
           </div>
           <div className={styles.socialLinks}>
             <a

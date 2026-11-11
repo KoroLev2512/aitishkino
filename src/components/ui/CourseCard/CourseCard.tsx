@@ -27,6 +27,7 @@ export const CourseCard: React.FC<CourseCardProps> = React.memo(
           <p className={styles.courseInfo}>Возраст: {age}</p>
           <p className={styles.courseInfo}>Модулей: {modules}</p>
           <button
+            type="button"
             className={styles.detailsButton}
             onClick={handleToggle}
             aria-expanded={isExpanded}

@@ -9,8 +9,13 @@ type PageLayoutProps = {
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
     <div className={styles.pageContainer}>
+      <a href="#main-content" className={styles.skipLink}>
+        Перейти к основному содержимому
+      </a>
       <Header />
-      <main className={styles.mainContent}>{children}</main>
+      <main id="main-content" className={styles.mainContent}>
+        {children}
+      </main>
     </div>
   );
 };

@@ -51,9 +51,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
               Политика конфиденциальности и обработки персональных данных
             </h1>
-            <p className="text-gray-500 text-sm">
-              Редакция от {new Date().toLocaleDateString('ru-RU')} г.
-            </p>
+            <p className="text-gray-500 text-sm">Редакция от 1 января 2025 г.</p>
           </header>
 
           <div className="prose prose-gray max-w-none space-y-8 text-gray-700 leading-relaxed">

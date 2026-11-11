@@ -37,6 +37,12 @@
   color: #111827;
 }
 
+.questionButton:focus-visible {
+  outline: 2px solid #00b18f;
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
 .questionText {
   flex: 1;
   min-width: 0;

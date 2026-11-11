@@ -97,6 +97,11 @@
   color: #ffffff;
 }
 
+.detailsButton:focus-visible {
+  outline: 2px solid #00b18f;
+  outline-offset: 2px;
+}
+
 /* Expanded content styles */
 .expandedContent {
   max-height: 0;
