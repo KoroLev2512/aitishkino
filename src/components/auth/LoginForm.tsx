@@ -10,7 +10,6 @@ import {
   User,
   GraduationCap,
   Users,
-  Sparkles,
   CheckCircle2,
   AlertCircle,
   HelpCircle,
@@ -106,10 +105,6 @@ export const LoginForm: React.FC = () => {
       <div className="lg:col-span-7 bg-white rounded-2xl shadow-xl shadow-gray-100 border border-gray-100 p-6 sm:p-8">
         {/* Заголовок */}
         <div className="mb-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00B18F]/10 text-[#00B18F] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles size={14} />
-            <span>Личный кабинет</span>
-          </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
             Вход на платформу
           </h1>
