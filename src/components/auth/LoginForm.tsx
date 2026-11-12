@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Users,
   Sparkles,
-  ArrowRight,
   CheckCircle2,
   AlertCircle,
   HelpCircle,
@@ -131,7 +130,7 @@ export const LoginForm: React.FC = () => {
                 setRole('student');
                 setError(null);
               }}
-              className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-semibold transition-all ${
+              className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                 role === 'student'
                   ? 'bg-white text-gray-900 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -146,7 +145,7 @@ export const LoginForm: React.FC = () => {
                 setRole('parent');
                 setError(null);
               }}
-              className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-semibold transition-all ${
+              className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                 role === 'parent'
                   ? 'bg-white text-gray-900 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -166,7 +165,7 @@ export const LoginForm: React.FC = () => {
               setMethod('phone');
               setError(null);
             }}
-            className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-colors ${
+            className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-colors cursor-pointer ${
               method === 'phone'
                 ? 'border-[#00B18F] text-[#00B18F]'
                 : 'border-transparent text-gray-500 hover:text-gray-800'
@@ -180,7 +179,7 @@ export const LoginForm: React.FC = () => {
               setMethod('password');
               setError(null);
             }}
-            className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-colors ${
+            className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-colors cursor-pointer ${
               method === 'password'
                 ? 'border-[#00B18F] text-[#00B18F]'
                 : 'border-transparent text-gray-500 hover:text-gray-800'
@@ -214,10 +213,9 @@ export const LoginForm: React.FC = () => {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 bg-[#00B18F] hover:bg-[#00997A] text-white font-medium px-6 py-3 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#00B18F] hover:bg-[#00997A] text-white font-medium px-6 py-3 rounded-xl transition-colors cursor-pointer"
             >
               <span>Вернуться на главную</span>
-              <ArrowRight size={18} />
             </Link>
           </div>
         ) : (
@@ -286,7 +284,7 @@ export const LoginForm: React.FC = () => {
                         <button
                           type="button"
                           onClick={handleSendCode}
-                          className="text-[#00B18F] font-semibold hover:underline"
+                          className="text-[#00B18F] font-semibold hover:underline cursor-pointer"
                         >
                           Отправить ещё раз
                         </button>
@@ -298,15 +296,12 @@ export const LoginForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full mt-4 bg-[#00B18F] hover:bg-[#00997A] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-[#00B18F]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                  className="w-full mt-4 bg-[#00B18F] hover:bg-[#00997A] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-[#00B18F]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <span className="inline-block animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
                   ) : isCodeSent ? (
-                    <>
-                      <span>Войти в личный кабинет</span>
-                      <ArrowRight size={18} />
-                    </>
+                    <span>Войти в личный кабинет</span>
                   ) : (
                     <span>Получить код по SMS</span>
                   )}
@@ -346,7 +341,7 @@ export const LoginForm: React.FC = () => {
                     </label>
                     <a
                       href={`tel:${siteConfig.contacts.phoneRaw}`}
-                      className="text-xs text-[#00B18F] hover:underline font-medium"
+                      className="text-xs text-[#00B18F] hover:underline font-medium cursor-pointer"
                     >
                       Забыли пароль?
                     </a>
@@ -364,7 +359,7 @@ export const LoginForm: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600 focus:outline-none"
+                      className="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer"
                       aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -378,7 +373,7 @@ export const LoginForm: React.FC = () => {
                       type="checkbox"
                       checked={rememberMe}
                       onChange={(e) => setRememberMe(e.target.checked)}
-                      className="w-4 h-4 rounded border-gray-300 text-[#00B18F] focus:ring-[#00B18F]"
+                      className="w-4 h-4 rounded border-gray-300 text-[#00B18F] focus:ring-[#00B18F] cursor-pointer"
                     />
                     <span>Запомнить меня</span>
                   </label>
@@ -387,15 +382,12 @@ export const LoginForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full mt-4 bg-[#00B18F] hover:bg-[#00997A] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-[#00B18F]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                  className="w-full mt-4 bg-[#00B18F] hover:bg-[#00997A] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-[#00B18F]/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <span className="inline-block animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
                   ) : (
-                    <>
-                      <span>Войти</span>
-                      <ArrowRight size={18} />
-                    </>
+                    <span>Войти</span>
                   )}
                 </button>
               </div>
@@ -408,10 +400,9 @@ export const LoginForm: React.FC = () => {
           <p className="text-sm text-gray-600 mb-2">Ещё не учитесь в «Айтишкино»?</p>
           <Link
             href="/#application-form"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00B18F] hover:underline"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00B18F] hover:underline cursor-pointer"
           >
             <span>Записаться на бесплатный пробный урок</span>
-            <ArrowRight size={16} />
           </Link>
         </div>
       </div>
@@ -420,10 +411,7 @@ export const LoginForm: React.FC = () => {
       <div className="lg:col-span-5 space-y-6">
         {/* Карточка возможностей платформы */}
         <div className="bg-gradient-to-br from-[#00B18F]/10 via-[#00B18F]/5 to-transparent rounded-2xl border border-[#00B18F]/20 p-6 sm:p-7">
-          <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <Sparkles className="text-[#00B18F]" size={20} />
-            <span>Возможности личного кабинета</span>
-          </h2>
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Возможности личного кабинета</h2>
           <ul className="space-y-3.5 text-sm text-gray-700">
             <li className="flex items-start gap-3">
               <div className="w-5 h-5 rounded-full bg-[#00B18F]/20 text-[#00B18F] flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
@@ -479,7 +467,7 @@ export const LoginForm: React.FC = () => {
               <Phone size={16} className="text-[#00B18F]" />
               <a
                 href={`tel:${siteConfig.contacts.phoneRaw}`}
-                className="font-semibold hover:text-[#00B18F] transition-colors"
+                className="font-semibold hover:text-[#00B18F] transition-colors cursor-pointer"
               >
                 {siteConfig.contacts.phone}
               </a>

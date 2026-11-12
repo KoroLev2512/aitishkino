@@ -42,6 +42,32 @@ body {
   outline-offset: 2px;
 }
 
+/* Ensure all interactive / clickable elements have cursor: pointer */
+button,
+[role='button'],
+[role='tab'],
+[role='menuitem'],
+[role='switch'],
+[role='link'],
+[type='button'],
+[type='submit'],
+[type='reset'],
+[type='checkbox'],
+[type='radio'],
+a,
+label,
+select,
+summary {
+  cursor: pointer;
+}
+
+button:disabled,
+[type='button']:disabled,
+[type='submit']:disabled,
+[type='reset']:disabled {
+  cursor: not-allowed;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html,
   body {

@@ -86,7 +86,7 @@ export const CoursesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-3">
               <button
-                className="w-full flex items-center justify-center gap-3 bg-[#00B18F] hover:bg-[#00997A] text-white font-medium text-lg md:text-xl py-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#00B18F] focus:ring-opacity-50"
+                className="w-full flex items-center justify-center gap-3 bg-[#00B18F] hover:bg-[#00997A] text-white font-medium text-lg md:text-xl py-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#00B18F] focus:ring-opacity-50 cursor-pointer"
                 onClick={() => {
                   const form = document.getElementById('application-form');
                   if (form) {
