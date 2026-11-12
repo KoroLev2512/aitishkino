@@ -124,9 +124,9 @@ export const Header = () => {
             >
               Запись
             </button>
-            <button className={styles.loginButton} type="button">
+            <Link href="/login" className={styles.loginButton} onClick={closeMenu}>
               Войти
-            </button>
+            </Link>
           </div>
 
           {/* Кнопка мобильного меню */}
@@ -174,9 +174,9 @@ export const Header = () => {
               >
                 Запись
               </button>
-              <button className={styles.mobileLoginButton} type="button">
+              <Link href="/login" className={styles.mobileLoginButton} onClick={closeMenu}>
                 Войти
-              </button>
+              </Link>
             </div>
           </div>
         </div>

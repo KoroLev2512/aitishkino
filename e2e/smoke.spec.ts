@@ -37,6 +37,23 @@ test.describe('Smoke tests', () => {
     await expect(h1).toContainText('Политика конфиденциальности');
   });
 
+  test('navigation to login page works and renders login form', async ({ page }) => {
+    await page.goto('/');
+
+    const loginLink = page.locator('header').getByRole('link', { name: 'Войти' });
+    await loginLink.click();
+
+    await expect(page).toHaveURL(/.*\/login/);
+    await expect(page).toHaveTitle(/Вход.*Айтишкино/i);
+
+    const h1 = page.locator('h1');
+    await expect(h1).toHaveCount(1);
+    await expect(h1).toContainText('Вход на платформу');
+
+    await expect(page.getByRole('button', { name: /Я ученик/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Я родитель/i })).toBeVisible();
+  });
+
   test('consultation form validates required fields', async ({ page }) => {
     await page.goto('/');
 
@@ -68,6 +85,22 @@ test.describe('Accessibility audits (Axe)', () => {
 
   test('python course page passes accessibility checks', async ({ page }) => {
     await page.goto('/courses/python');
+
+    const results = await new AxeBuilder({ page })
+      .exclude('iframe')
+      .withTags(['wcag2a', 'wcag2aa'])
+      .disableRules(['color-contrast'])
+      .analyze();
+
+    const criticalOrSerious = results.violations.filter(
+      (v) => v.impact === 'critical' || v.impact === 'serious'
+    );
+
+    expect(criticalOrSerious).toEqual([]);
+  });
+
+  test('login page passes accessibility checks', async ({ page }) => {
+    await page.goto('/login');
 
     const results = await new AxeBuilder({ page })
       .exclude('iframe')

@@ -88,11 +88,17 @@
 .loginButton {
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.5rem 1.5rem;
+  padding: 0 1.5rem;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .recordButton {
@@ -108,11 +114,12 @@
 .loginButton {
   background-color: #00b18f;
   color: white;
-  border: none;
+  border: 2px solid #00b18f;
 }
 
 .loginButton:hover {
   background-color: #00997a;
+  border-color: #00997a;
 }
 
 /* Мобильное меню */
@@ -216,11 +223,16 @@
 .mobileLoginButton {
   cursor: pointer;
   width: 100%;
-  padding: 0.75rem 1.5rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .mobileRecordButton {
@@ -232,7 +244,12 @@
 .mobileLoginButton {
   background-color: #00b18f;
   color: white;
-  border: none;
+  border: 2px solid #00b18f;
+}
+
+.mobileLoginButton:hover {
+  background-color: #00997a;
+  border-color: #00997a;
 }
 
 @keyframes fadeIn {

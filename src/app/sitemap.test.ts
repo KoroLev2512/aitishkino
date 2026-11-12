@@ -9,6 +9,7 @@ describe('sitemap()', () => {
 
     expect(urls).toContain(siteConfig.url);
     expect(urls).toContain(`${siteConfig.url}/courses/python`);
+    expect(urls).toContain(`${siteConfig.url}/login`);
     expect(urls).toContain(`${siteConfig.url}/privacy`);
     expect(items.length).toBeGreaterThanOrEqual(3);
   });
