@@ -1,5 +1,6 @@
 # «Айтишкино» — Онлайн-школа программирования и робототехники для детей
 
+[![Production](https://img.shields.io/badge/Production-itishkino.ru-00b18f?logo=google-chrome&logoColor=white)](https://itishkino.ru/)
 [![CI](https://github.com/KoroLev2512/aitishkino/actions/workflows/ci.yml/badge.svg)](https://github.com/KoroLev2512/aitishkino/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0-blue?logo=react)](https://react.dev/)
@@ -9,7 +10,10 @@
 [![Playwright](https://img.shields.io/badge/Playwright-E2E-green?logo=playwright)](https://playwright.dev/)
 [![WCAG](https://img.shields.io/badge/A11y-WCAG%202.1%20AA-00b18f)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 
-Современный высокопроизводительный веб-сервис и лендинг детской школы программирования «Айтишкино». Проект спроектирован по стандартам Senior / Lead Frontend инженерии: чисто статический экспорт (`output: 'export'`), типобезопасный слой данных, 99% сокращение бандла через ленивую загрузку Lottie-анимаций, соответствие 152-ФЗ РФ и полное покрытие автоматическими тестами.
+> [!NOTE]
+> 🚀 **Проект в продакшене**: Данный концепт и инженерное демо успешно защищены, заапрувлены и получили жизнь в реальном продакшене на **[itishkino.ru](https://itishkino.ru/)**.
+
+Современный высокопроизводительный веб-сервис и образовательная платформа школы программирования «Айтишкино». Проект спроектирован по стандартам Senior / Lead Frontend инженерии: чисто статический экспорт (`output: 'export'`), типобезопасный слой данных, 99% сокращение бандла через ленивую загрузку Lottie-анимаций, полнофункциональная страница входа в платформу `/login`, соответствие 152-ФЗ РФ и полное покрытие автоматическими тестами.
 
 ---
 
@@ -32,8 +36,8 @@
 | **Ошибки компиляции TypeScript**       | 10+ (подавлялись в конфиге)  |      **0 (`strict: true`)**      |     Исправлено      |
 | **Ошибки 404 шрифтов в консоли**       | 4 запроса на каждый переход  | **0 (Google Inter `next/font`)** |      Устранено      |
 | **Размер репозитория**                 |   > 1.7 ГБ (кэш `deploy/`)   |           **< 30 МБ**            |     **-98.2%**      |
-| **Unit & Integration тесты**           |              0               |   **17 тестов (Vitest + RTL)**   |      100% Pass      |
-| **E2E & Accessibility тесты**          |              0               | **6 тестов (Playwright + Axe)**  | 0 нарушений WCAG AA |
+| **Unit & Integration тесты**           |              0               |    **21 тест (Vitest + RTL)**    |      100% Pass      |
+| **E2E & Accessibility тесты**          |              0               | **8 тестов (Playwright + Axe)**  | 0 нарушений WCAG AA |
 | **Безопасность и соответствие закону** | Нет согласия 152-ФЗ, alert() |  **Zod, Honeypot, `/privacy`**   |    Полная защита    |
 
 ---
@@ -87,6 +91,7 @@ aitishkino/
 ├── src/
 │   ├── app/
 │   │   ├── courses/python/      # Выделенная страница курса Python
+│   │   ├── login/               # Страница входа в личный кабинет платформы
 │   │   ├── privacy/             # Страница политики конфиденциальности (152-ФЗ)
 │   │   ├── not-found.tsx        # Брендированная страница 404
 │   │   ├── robots.ts            # robots.txt генератор
@@ -94,6 +99,7 @@ aitishkino/
 │   │   ├── layout.tsx           # Корневой лэйаут с Inter (кириллица) и микроразметкой
 │   │   └── page.tsx             # Главная страница
 │   ├── components/
+│   │   ├── auth/                # Модуль авторизации: роли ученика/родителя, вход по SMS и паролю
 │   │   ├── common/              # Header с мобильным меню и навигацией
 │   │   ├── layout/              # PageLayout с кнопкой "Skip to content"
 │   │   ├── sections/            # Секции лендинга (Hero, Courses, Consultation и др.)
