@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Header } from '../common/Header/Header';
+import { ConsultationPopup } from '../ui/ConsultationPopup/ConsultationPopup';
 import styles from './PageLayout.module.css';
 
 type PageLayoutProps = {
@@ -16,6 +17,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
       <main id="main-content" className={styles.mainContent}>
         {children}
       </main>
+      <ConsultationPopup delayMs={60000} />
     </div>
   );
 };

@@ -16,6 +16,7 @@ export const leadSchema = z.object({
     .email('Пожалуйста, введите корректный адрес электронной почты')
     .or(z.literal(''))
     .optional(),
+  message: z.string().optional(),
   consent: z.literal(true, {
     message: 'Необходимо подтвердить согласие на обработку персональных данных',
   }),

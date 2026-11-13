@@ -114,4 +114,30 @@ test.describe('Accessibility audits (Axe)', () => {
 
     expect(criticalOrSerious).toEqual([]);
   });
+
+  test('consultation popup opens and passes accessibility checks', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => {
+      window.dispatchEvent(new CustomEvent('open-consultation-popup'));
+    });
+
+    const modal = page.getByRole('dialog');
+    await expect(modal).toBeVisible();
+    await expect(page.getByText(/Успешное будущее вашего ребенка/i)).toBeVisible();
+
+    const results = await new AxeBuilder({ page })
+      .exclude('iframe')
+      .withTags(['wcag2a', 'wcag2aa'])
+      .disableRules(['color-contrast'])
+      .analyze();
+
+    const criticalOrSerious = results.violations.filter(
+      (v) => v.impact === 'critical' || v.impact === 'serious'
+    );
+
+    expect(criticalOrSerious).toEqual([]);
+
+    await page.getByRole('button', { name: /Закрыть модальное окно/i }).click();
+    await expect(modal).not.toBeVisible();
+  });
 });
